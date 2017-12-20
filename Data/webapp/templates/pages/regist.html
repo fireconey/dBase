@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="refresh" content="2000">
+	<title>regist</title>
+	<script type='text/javascript'  src={%  static "js/regist.js"%}></script>
+	<!-- 一般的地址时http地址/文件/...-->
+    <link rel="stylesheet" href= "static/style/regist.css">
+</head>
+<body>
+	<div id="container">
+		<form id="fom" action="#" method="post">
+			<label for="user">账号：
+				<input type="text" id="user" value="请输入账号"/>	
+			</label>
+			<label for="passwd">输入密码：
+				<input type="text" id="passwd" value="请输入密码"/>	
+			</label>
+			<label for="passwd2">密码验证：
+				<input type="text" id="passwd2" value="请输入密码"/>	
+			</label>
+			<label for="sex">性别：
+				<select name="sex" id="sex">
+					<option value="男">男</option>
+					<option value="女">女</option>
+				</select>	
+			</label>
+			<label >出生日期：
+				<input type="txet"  class="birth" value="日"/>
+				<input type="txet"  class="birth" value="月"/>
+				<input type="txet"  class="birth" value="年"/>
+			</label>
+            <label for="wx">微信号：
+				<input type="text" id="wx" value="请输入邮箱"/>
+			</label>
+            <label for="phone">电话号码：
+				<input type="text" id="phone" value="请输入电话{{  th}}"/>
+			</label>
+
+            <label for="loc">地理位置：
+				<input type="text" id="loc" value="请输入电话{{  th}}"/>
+			</label>
+
+			<div id="inp">
+				<input type="submit" value="确定" class="put">
+				<input type="button" value="取消" class="put">
+			</div>
+			
+			
+		</form>
+	</div>
+
+</body>
+</html>

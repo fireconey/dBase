@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="refresh" content="2000">
+	<title>loading</title>
+	<script type='text/javascript'  src={% static "js/loading.js"%}></script>
+	<link rel="stylesheet" href={% static "style/loading.css"%}>
+</head>
+<body>
+	<div id="container">
+		<form id="fom" action="#" method="post">
+			<label for="user">账号：<input type="text" id="user" value="请输入账号"/>	</label>
+			
+			<label for="passwd">密码：<input type="text" id="passwd" value="请输入密码"/>	</label>
+			<div id="inp">
+				<input type="submit" value="确定" class="put">
+				<input type="button" value="取消" class="put">
+				<input type="button" value="注册" class="put">
+			</div>
+			
+			
+		</form>
+	</div>
+
+</body>
+</html>
