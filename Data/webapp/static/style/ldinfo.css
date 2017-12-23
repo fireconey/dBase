@@ -5,8 +5,7 @@
 }
 
 body{
-	min-height:1000px;
-	min-width: 800px;
+
 }
 
 #container{
@@ -14,8 +13,9 @@ body{
 	margin:auto;
 	height:100%;
 	width:80%;
-	min-width:800px;
 
+	min-width:800px;
+	height:1000px;
 }
 #header{
 	width:100%;
@@ -99,7 +99,6 @@ body{
 
 #im img{
 	width:100%;
-
 	border-radius:50%;
 
 }
@@ -114,32 +113,26 @@ body{
 	margin:auto;
 	margin-top:3%;
 	width: 50%;
-	height:60%;
+	height:50%;
 	padding-right:3%; 
 }
 
 #content #fo label{
-	height:1%;
-	width: 10%;
+	height:10%; 
 	margin-left:3%;
 	font-size:1.5em;
 	color:#FFF;
 }
 #content  #fo input{
-	margin-top:3%;
-	height:9%;
-	width:80%;
-	font-size:1.2em;
-}
-#fosubmit {
-	background:#CCCCCC;
-	width: 100px!important;
-	height: 35px;
-	font-size: 1.1em;
-	margin-left:40%;
-	border-radius: 5px;
+	margin-top:10%;
+	height:10%;
+	width:80%; 
+	font-size: 1.2em;
+	
+
 
 }
+
 
 #footer{
     margin-top: 1%;

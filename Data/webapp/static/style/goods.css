@@ -1,0 +1,139 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+
+}
+
+body{
+	min-width: 900px;
+	min-height:1000px;
+}
+#container{
+	margin:auto;
+	height:100%;
+	width:90%;
+	}
+
+#header{
+	width:100%;
+	height:10%;
+	background: yellow;
+}
+
+#topbar{
+	height:100%;
+	width:100%;
+	background:red;
+	position: relative;
+}
+#topbar img{
+	height:100%;
+	border-radius:50%;
+	float:left;
+	margin-left:4%;
+}
+#topbar #name{
+
+	margin-top:3%;
+	margin-left: 1%;
+	color:#FFF;
+	float:left;
+}
+
+#topbar ul{
+ 
+   width: 70%;
+	height:50%;
+	margin: auto;
+	margin-top:4%;
+    float: left;
+    background: red;
+
+	
+	
+}
+
+#topbar ul li{
+	height:100%;
+	list-style:none;
+	margin-left:10%;
+	padding-top:5%;
+	float:left;
+	background: yellow;
+}
+
+#topbar ul li a{
+	display: block;
+	background:blue;
+	text-decoration:none;
+	font-size: 17px;
+	color:#FFF;
+}
+
+
+/*******************详细内容****************/
+
+#content{
+	height: 60%;
+	width:100%;
+	background: red;
+}
+
+#content #sell{
+	width:60%;
+	height: 100%;
+	background: blue; 
+	float:left;
+}
+
+#sell #title{
+	background: yellow;
+	height:10%; 
+	text-align: center;
+	padding-top: 5%;
+
+}
+
+#sell #call{
+	background: blue;
+	height: 10%;
+}
+#sell #explain{
+	background: red;
+	height: 60%;
+}
+#content #buy{
+	width: 40%;
+	height: 100%;
+	background: green;
+	float:right;
+}
+#buy #title{
+	height: 10%;
+	text-align: center;
+	padding-top: 5%;
+	background: blue;
+	color:#FFF;
+}
+
+#buy #th{
+	height: 20%;
+	background: yellow;
+
+}
+
+#buy #detail{
+	background: green;
+	height: 70%;
+}
+
+
+#footer{
+
+	clear:both;
+	height:10%;
+	width:100%;
+	background:green;
+	box-shadow: 5px 5px 3px #8F8F8F; 
+}

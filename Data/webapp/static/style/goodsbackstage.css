@@ -1,0 +1,162 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+
+}
+
+body{
+	min-width: 900px;
+	min-height:1000px;
+}
+#container{
+	margin:auto;
+	height:100%;
+	width:90%;
+	}
+
+#header{
+	width:100%;
+	height:10%;
+	background: yellow;
+}
+
+#topbar{
+	height:100%;
+	width:100%;
+	background:red;
+	position: relative;
+}
+#topbar img{
+	height:100%;
+	border-radius:50%;
+	float:left;
+	margin-left:4%;
+}
+#topbar #name{
+
+	margin-top:3%;
+	margin-left: 1%;
+	color:#FFF;
+	float:left;
+}
+
+#topbar ul{
+ 
+   width: 70%;
+	height:50%;
+	margin: auto;
+	margin-top:4%;
+    float: left;
+    background: red;
+	
+}
+
+#topbar ul li{
+	height:100%;
+	list-style:none;
+	margin-left:10%;
+	padding-top:5%;
+	float:left;
+	background: yellow;
+}
+
+#topbar ul li a{
+	display: block;
+	background:blue;
+	text-decoration:none;
+	font-size: 17px;
+	color:#FFF;
+}
+
+
+
+/************************以下是详细内容******/
+#container #sell{
+	height:30%; 
+	width:100%; 
+	background: yellow;
+}
+#sell label{
+    height:10%; 
+    width:50%; 
+	margin-left:1%;
+	background: green;
+	text-align: center;
+	margin:auto;
+}
+
+#sell label input{
+	width:30%;
+	height:10%; 
+	margin:auto;
+}
+#sell #detalab{
+	display: block;
+	width: 100%;
+	margin: 0;
+	display: block;
+	font-size: 1.2em;
+	background: red;
+}
+#sell  #detail{
+	height:80%;
+	width:100%;
+	overflow-y: visible;
+	background: green;
+}
+
+
+
+#container #buy{
+	height: 30%;
+	width: 100%;
+	background: blue;
+}
+
+#buy #leftcontainer{
+	height:100%;
+	width: 50%;
+	background: red; 
+	float: left;
+}
+#leftcontainer #spec{
+	width: 100%;
+	height:10%; 
+	margin-top:1.5%;
+	background: yellow;
+}
+#spec #title{
+	width:35%;
+	height:100%;  
+}
+#leftcontainer #other1{
+	height: 100%;
+	width: 20%;
+}
+#leftcontainer #other2{
+	height: 100%;
+	width: 10%;
+}
+
+#leftcontainer #add{
+	background: #ccc;
+	width:20%;
+	height:10%; 
+	border-radius:8px; 
+	display: block;
+	font-size:1.5em;
+	line-height: 20px;
+	margin:auto;
+	margin-top:2%;
+
+
+}
+
+#buy #deta{
+	height: 100%;
+	width: 50%;
+	float: right;
+	overflow-y: visible;
+	border: 1px dashed black;
+}
