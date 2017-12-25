@@ -12,7 +12,7 @@ body{
 
 #container{
 	width:80%; 
-	min-width: 850px;
+	min-width:850px;
 	margin:auto;
 
 	
@@ -111,7 +111,7 @@ body{
 	background: #CCC;
 	margin:auto;
 	margin-top:1%;
-	width: 40%;
+	width: 45%;
 	height:70%;
 	padding-right:3%; 
 }
@@ -119,14 +119,14 @@ body{
 #content #fo label{
 	height:5%; 
 	margin-left:3%;
-	font-size:1.2em;
+	font-size:1em;
 	color:#FFF;
 }
 #content  #fo input{
 	margin-top:4%;
 	height:8%;
 	width:80%; 
-	font-size: 1em;
+	font-size: 0.7em;
 }
 #content #fosubmit{
 	 background:#fff; 
