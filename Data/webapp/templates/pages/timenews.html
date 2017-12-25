@@ -1,19 +1,17 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="refresh" content="3">
-	<link rel="stylesheet" href={% static "style/timenews.css" %}>
-	<script type="text/javascript" src={% static "js/timenews.js" %}></script>
+	<meta http-equiv="refresh" content="2">
+	<link rel="stylesheet" href="../style/timenews.css">
+	<script type="text/javascript" src="../js/timenews.js"></script>
 	<title>timenews</title>
 
 </head>
 <body>
 	<div id="container">
 		<header id="header">
-			<div id="ad"><img src={% static "/img/banner/timg.jpg"%}></div>
-			<nav id="topbar"> <img src={% static "img/loading.jpg" %} alt="登陆的头像">
+			<nav id="topbar"> <img src="../img/loading.jpg" alt="登陆的头像">
 				<div id="name">姓名</div>
 				<ul>
 					<li><a href="#">首页</a></li>
@@ -25,22 +23,13 @@
 			</nav>
 		</header>
 		<div id="content">
-			<div id="otherinfo">
-				<img src={% static "img/loading.jpg"%} alt="空">
-				<div id="usrxy">
-					<p>田华
+			<div id="img">
+				<img src="../img/loading.jpg" alt="">
+				<div class="usrxy">田华</div>
+				<div class="usrxy">
 					<p>好评123/差评12</p>
 					<p>信用度12</p>
 				</div>
-				<form action="#" method="post"  id="achievment">
-					<label >好评<input type="radio" name="ach" value=1></label>
-					<label >中评<input type="radio" name="ach" value=1></label>
-					<label >差评<input type="radio" name="ach" value=1></label>
-					<textarea id="edit">
-						123
-					</textarea>
-					<input type="submit" id="submit" value="提交">
-				</form>
 			</div>
 			<div id="usrinfo">
 				<div id="title">
@@ -53,11 +42,10 @@
 					联系方式
 				</div>
 			</div>
+			<div id="info">
+				
+			</div>
 		</div>
-		<footer id="footer">
-			<div>电话：13957613802</div>
-			<div>版权@13957613802</div>
-		</footer>
 	</div>
 </body>
 </html>

@@ -5,13 +5,10 @@ window.onload=function(){
 
 window.onresize=function(){
 	initbody()
-
 }
 
 function initbody(){
-	var ob=document.getElementById("container")
-	var w=ob.offsetWidth
-	   ob.style.height=w/0.6714+"px"
-
+	var ob=document.getElementsByTagName('body')[0]
+	var h=window.innerHeight
+	ob.style.height=h+"px"
 }
-

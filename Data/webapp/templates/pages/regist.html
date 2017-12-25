@@ -3,15 +3,14 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="refresh" content="2">
+	<meta http-equiv="refresh" content="2000">
 	<title>regist</title>
 	<script type='text/javascript'  src={%  static "js/regist.js"%}></script>
 	<!-- 一般的地址时http地址/文件/...-->
-	<link rel="stylesheet" href={%static "style/regist.css" %}>
+    <link rel="stylesheet" href= "static/style/regist.css">
 </head>
 <body>
 	<div id="container">
-		<div id="back" >
 		<form id="fom" action="#" method="post">
 			<label for="user">账号：
 				<input type="text" id="user" value="请输入账号"/>	
@@ -33,13 +32,14 @@
 				<input type="txet"  class="birth" value="月"/>
 				<input type="txet"  class="birth" value="年"/>
 			</label>
-			<label for="wx">微信号：
+            <label for="wx">微信号：
 				<input type="text" id="wx" value="请输入邮箱"/>
 			</label>
-			<label for="phone">电话号码：
+            <label for="phone">电话号码：
 				<input type="text" id="phone" value="请输入电话{{  th}}"/>
 			</label>
-			<label for="loc">地理位置：
+
+            <label for="loc">地理位置：
 				<input type="text" id="loc" value="请输入电话{{  th}}"/>
 			</label>
 
@@ -47,8 +47,10 @@
 				<input type="submit" value="确定" class="put">
 				<input type="button" value="取消" class="put">
 			</div>
+			
+			
 		</form>
 	</div>
-	</div>
+
 </body>
 </html>

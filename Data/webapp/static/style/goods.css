@@ -6,33 +6,25 @@
 }
 
 body{
-	
+	min-width: 900px;
+	min-height:1000px;
 }
 #container{
 	margin:auto;
-	width:80%;
-	min-width:850px;
-}
+	height:100%;
+	width:90%;
+	}
+
 #header{
 	width:100%;
-	height:250px;
-	margin-bottom:1%;
-	box-shadow: 5px 5px 3px #8F8F8F; 
-	
+	height:10%;
+	background: yellow;
 }
-#ad{
-	height:80%;
-	width:100%;
-	background:yellow;
-}
-#ad img{
-	height: 100%;
-	width: 100%;
-}
+
 #topbar{
-	height:20%;
+	height:100%;
 	width:100%;
-	background:blue;
+	background:red;
 	position: relative;
 }
 #topbar img{
@@ -43,24 +35,32 @@ body{
 }
 #topbar #name{
 
-	margin-top:2.5%;
+	margin-top:3%;
 	margin-left: 1%;
 	color:#FFF;
 	float:left;
 }
 
 #topbar ul{
-	height:60%;
+ 
+   width: 70%;
+	height:50%;
 	margin: auto;
-	margin-top:2%;
-	float: left;
+	margin-top:4%;
+    float: left;
+    background: red;
+
+	
+	
 }
 
 #topbar ul li{
 	height:100%;
 	list-style:none;
-	margin-left:100px;
+	margin-left:10%;
+	padding-top:5%;
 	float:left;
+	background: yellow;
 }
 
 #topbar ul li a{
@@ -72,118 +72,67 @@ body{
 }
 
 
-
 /*******************详细内容****************/
 
 #content{
-    background: red;
+	height: 60%;
 	width:100%;
-	box-shadow: 5px 5px 3px #8F8F8F;
-
+	background: red;
 }
 
 #content #sell{
-	width:100%;
-	height:33.33%;
+	width:60%;
+	height: 100%;
 	background: blue; 
-
+	float:left;
 }
-
 
 #sell #title{
 	background: yellow;
-	height:48%; 
+	height:10%; 
 	text-align: center;
-	font-size:1.5em; 
-	padding-top:3%; 
-	overflow: hidden;
-	
+	padding-top: 5%;
 
 }
 
-#sell #usrinfo{
+#sell #call{
 	background: blue;
-	height:52%;
+	height: 10%;
 }
-#usrinfo #img{
-	padding-left:3.5%; 
-	float:left;
-	height:100%; 
-	width:55%;
-	background: green; 
-}
-#img img{
-    float:left;
-	height: 90%;
-	border-radius: 50%;
-	margin-top:0.5%; 
-}
-#img #name{
-	float:left;
-	margin-top:7%;
-	margin-left: 1%; 
-}
-#img #eva{
-    padding-top:1%;  
-	width:45%; 
-	height:100%; 
-	float:left;
-	text-align: center;
-}
-
-#xy{
-	padding-top:4%; 
-	width:25%; 
-	height:100%; 
-	float:left;
-}
-
-
-
-#usrinfo #calldata{
-	float:right;
-	width:45%;
-	background: blue; 
-}
-
-
-
-#content #buy{
-	width: 100%;
-	height: 66.66%;
+#sell #explain{
 	background: red;
-
+	height: 60%;
+}
+#content #buy{
+	width: 40%;
+	height: 100%;
+	background: green;
+	float:right;
 }
 #buy #title{
-	height:20%;
+	height: 10%;
 	text-align: center;
-	font-size: 1.5em;
-    padding-top:2%; 
-	background: yellow;
+	padding-top: 5%;
+	background: blue;
+	color:#FFF;
 }
 
 #buy #th{
-	height: 25%;
-	background: blue;
+	height: 20%;
+	background: yellow;
+
 }
 
 #buy #detail{
-    background: yellow;
-	height:55%;
-	overflow-y: visible;
+	background: green;
+	height: 70%;
 }
 
-#explain{
-	margin-top:1%; 
-	width:100%;
-	min-height:60px;  
-	background: blue;
-	box-shadow: 5px 5px 3px #8F8F8F;   
-}
 
 #footer{
+
 	clear:both;
-	margin-top:1%; 
+	height:10%;
 	width:100%;
 	background:green;
 	box-shadow: 5px 5px 3px #8F8F8F; 

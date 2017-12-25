@@ -1,18 +1,16 @@
-{%load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv='refresh' content="3">
+	<meta http-equiv='refresh' content="3000">
 	<title>goodsbackstage</title>
-	<link rel="stylesheet" type="text/css" href={% static "style/goodsbackstage.css"%}>
-	<script type="text/javascript" src={% static "js/goodsbackstage.js" %}></script>
+	<link rel="stylesheet" type="text/css" href="../style/goodsbackstage.css">
+	<script type="text/javascript" src="../js/goodsbackstage.js"></script>
 </head>
 <body>
 	<div id="container">
 		<header id="header">
-      <div id="ad"><img src={%  static "img/banner/timg.jpg"%}></div>
-      <nav id="topbar"> <img src={% static "img/loading.jpg"%} alt="登陆的头像">
+      <nav id="topbar"> <img src="../img/loading.jpg" alt="登陆的头像">
         <div id="name">姓名</div>
         <ul>
           <li><a href="#">首页</a></li>
@@ -23,7 +21,6 @@
         </ul>
       </nav>
     </header>
-
     <section id="sell">
     	<label for="title">请输入物品名称：
     		<input type="text" id="title">
@@ -38,9 +35,7 @@
        1
      </div>
    </section>
-
    <section id="buy">
-    <div id="need">需求:</div>
     <div id="leftcontainer">
       <div id="spec">
         物品名称<input type="text" id="title">
@@ -52,14 +47,8 @@
     <div contenteditable="true" id="deta">
       11
     </div>
+
   </section>
-
-  <footer id="footer">
-    <div>电话：13957613802</div>
-    <div>版权@13957613802</div>
-  </footer>
-</br>
-
 </div>
 
 </body>

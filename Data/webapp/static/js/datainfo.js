@@ -10,8 +10,8 @@ window.onresize=function(){
 }
 
 function initbody(){
-	var ob=document.getElementById("container")
-	var w=ob.offsetWidth
-	    ob.style.height=w/0.957+"px"
+	var h=window.innerHeight
+	var ob=document.getElementsByTagName('body')[0]
+	ob.style.height=h+"px"
 }
 
