@@ -21,9 +21,12 @@ urlpatterns = [
     url('admin/', admin.site.urls),
     url("index",view.index),
     url('rg',view.regist),
-    url("lin",view.ld),
-    url("ldinfo",view.ldinfo),
-    url("df",view.datainfo)
-
+    url("ld",view.ld),
+    url("din",view.di),
+    url("df",view.datainfo),
+    url("gs",view.goods),
+    url("gb", view.gb),
+    url("tim",view.tim),
+    url("eval",view.eval),
 
 ]

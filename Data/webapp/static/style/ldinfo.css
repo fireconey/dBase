@@ -6,20 +6,20 @@
 
 body{
 
+	
+
 }
 
 #container{
-
+	width:80%; 
+	min-width: 850px;
 	margin:auto;
-	height:100%;
-	width:80%;
 
-	min-width:800px;
-	height:1000px;
+	
 }
 #header{
 	width:100%;
-	height:24.5%;
+	height:23.4%;
 	box-shadow: 5px 5px 3px #8F8F8F;
 }
 #ad{
@@ -46,7 +46,7 @@ body{
 
 #topbar #name{
 
-	margin-top:3%;
+	margin-top:2.5%;
 	margin-left: 1%;
 	color:#FFF;
 	float:left;
@@ -82,19 +82,17 @@ body{
 
 #content{
 	width: 100%;
-	height: 75.5%;
-	background: green;
-	padding-top:5%; 
+	height:56.1%;
 	margin-top: 1%;
+	background: green;
+	padding-top:1%; 
 	box-shadow: 5px 5px 3px #8F8F8F;
 }
 
 
 #content #im{
-
-	width:20%;
-	margin:auto;
-	
+	width:10%;
+	margin:auto;	
 }
 
 #im img{
@@ -104,6 +102,7 @@ body{
 }
 #ldinfoim{
 	width:10%;
+	height:4%; 
 	text-align: center;
 	margin:auto;
 }
@@ -111,33 +110,38 @@ body{
 	display: block;
 	background: #CCC;
 	margin:auto;
-	margin-top:3%;
-	width: 50%;
-	height:50%;
+	margin-top:1%;
+	width: 40%;
+	height:70%;
 	padding-right:3%; 
 }
 
 #content #fo label{
-	height:10%; 
+	height:5%; 
 	margin-left:3%;
-	font-size:1.5em;
+	font-size:1.2em;
 	color:#FFF;
 }
 #content  #fo input{
-	margin-top:10%;
-	height:10%;
+	margin-top:4%;
+	height:8%;
 	width:80%; 
-	font-size: 1.2em;
-	
-
-
+	font-size: 1em;
 }
-
+#content #fosubmit{
+	 background:#fff; 
+	 /*display: block;*/
+	 float:right;
+	 width:30%!important; 
+	 margin-right:30%;
+	 border-radius:7px; 
+	 height:10%; 
+}
 
 #footer{
     margin-top: 1%;
 	clear:both;
-	height:10%;
+	height:18.7%;
 	width:100%;
 	background:green;
 	box-shadow: 5px 5px 3px #8F8F8F;
