@@ -130,9 +130,15 @@
   </component>
   <component name="ProjectFrameBounds">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="x" value="19" />
     <option name="y" value="50" />
     <option name="width" value="1141" />
+=======
+    <option name="x" value="145" />
+    <option name="y" value="64" />
+    <option name="width" value="972" />
+>>>>>>> parent of 2b6e48a... 所有的都变成了同比例放大缩小的设计
 =======
     <option name="x" value="145" />
     <option name="y" value="64" />
@@ -257,8 +263,12 @@
   </component>
   <component name="ToolWindowManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <frame x="19" y="50" width="1141" height="684" extended-state="0" />
     <editor active="true" />
+=======
+    <frame x="145" y="64" width="972" height="684" extended-state="0" />
+>>>>>>> parent of 2b6e48a... 所有的都变成了同比例放大缩小的设计
 =======
     <frame x="145" y="64" width="972" height="684" extended-state="0" />
 >>>>>>> parent of 2b6e48a... 所有的都变成了同比例放大缩小的设计

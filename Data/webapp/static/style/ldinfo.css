@@ -10,8 +10,12 @@ body{
 
 #container{
 <<<<<<< HEAD
+<<<<<<< HEAD
 	width:80%; 
 	min-width:850px;
+=======
+
+>>>>>>> parent of 2b6e48a... 所有的都变成了同比例放大缩小的设计
 =======
 
 >>>>>>> parent of 2b6e48a... 所有的都变成了同比例放大缩小的设计
@@ -117,9 +121,15 @@ body{
 	background: #CCC;
 	margin:auto;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	margin-top:1%;
 	width: 45%;
 	height:70%;
+=======
+	margin-top:3%;
+	width: 50%;
+	height:50%;
+>>>>>>> parent of 2b6e48a... 所有的都变成了同比例放大缩小的设计
 =======
 	margin-top:3%;
 	width: 50%;
@@ -132,7 +142,11 @@ body{
 	height:10%; 
 	margin-left:3%;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	font-size:1em;
+=======
+	font-size:1.5em;
+>>>>>>> parent of 2b6e48a... 所有的都变成了同比例放大缩小的设计
 =======
 	font-size:1.5em;
 >>>>>>> parent of 2b6e48a... 所有的都变成了同比例放大缩小的设计
@@ -142,6 +156,7 @@ body{
 	margin-top:10%;
 	height:10%;
 	width:80%; 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	font-size: 0.7em;
 }
@@ -154,10 +169,15 @@ body{
 	 border-radius:7px; 
 	 height:10%; 
 =======
+=======
+>>>>>>> parent of 2b6e48a... 所有的都变成了同比例放大缩小的设计
 	font-size: 1.2em;
 	
 
 
+<<<<<<< HEAD
+>>>>>>> parent of 2b6e48a... 所有的都变成了同比例放大缩小的设计
+=======
 >>>>>>> parent of 2b6e48a... 所有的都变成了同比例放大缩小的设计
 }
 
