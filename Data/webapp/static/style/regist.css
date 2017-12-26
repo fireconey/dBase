@@ -1,43 +1,43 @@
 *{
 	margin:0;
 	padding:0;
-	box-sizing: border-box;
-	-webkit-box-sizing:border-box;
-	-moz-box-sizing:border-box;
 
 }
 body{
    
-	background-image:url(../img/background/s.jpg) ;
-    position: relative;
-    min-width: 800px;
+	background-image:url(../img/background/s.jpg);
+	
+
 
 
 }
 #container{
-	width: 100%;
-    background-color: rgba(0,0,0,0.5);
-	height:45%;
+	width:100%; 
+	min-width:800px; 
 	margin: auto;
-	position:absolute;
-	top:30%;
+}
+#container #back{
+	background-color: rgba(0,0,0,0.5);
+	height:100%;
+	width:100%;  
+
 }
 
 #fom{
-	
+	box-sizing: border-box;
 	color:#FFF;
-	width: 50%;
+	width:50%;
 	height: 100%;
 	background: green;
     margin:auto;
-    padding-top: 1%;
-	
+    padding-top:1%; 
+   
 }
 #fom label{
 	width:80%;
-	height:15%;  
+	height:9.5%;  
 	display: block;
-	font-size:120%; 
+	font-size:1.1em; 
 	margin:auto;
 	margin-top: 1%;
 	
@@ -45,29 +45,34 @@ body{
 #fom label input{
 	float:right;
 	margin-right:1%;
-	height:80%;
+	height:90%;
 	width:65%;
 	border-radius: 3px;
 	border:1px solid black;
-	font-size: 0.8em;
+	font-size: 0.6em;
 
 
 }
 
 #fom #sex{
    background:#f5fffa;
-   font-size: 1.2em;
-   margin-left: 15%;
+   width:15%;
+   height:70%; 
+   font-size:1em;
+   margin-right: 51%;
+   float: right;
+   margin-top:1%; 
 }
 #fom .birth{
-	width:21%; 
+	width:20.7%; 
 }
 
 
 #fom #inp{
 	margin-left:35%;
-	height:25%;
+	height:8%;
 	width: 60%;
+
 }
 
 #inp  .put{
@@ -75,11 +80,11 @@ body{
 	background:#FFF; 
 	border-radius: 5px 5px ;
 	outline: none;
-	width: 40.5%;
-	height:50%; 
+	width: 40.8%;
+	height:100%; 
     font-size: 100%;
     margin-top: 2%;
-    margin-left: 4%;
+    margin-left: 3.6%;
     border:1px solid black;
     
 	

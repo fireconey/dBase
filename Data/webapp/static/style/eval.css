@@ -81,73 +81,107 @@ body{
 	box-shadow: 5px 5px 3px #8F8F8F; 
 }
 #content #centerbox{
-	height:100%; 
-
+	margin:auto;
+	width:70%;
+	height:100%;  
 }
 #centerbox #img{
 	height:10%; 
 	clear:both;
-	background: yellow;
 }
+
 #img img{
+    display: block;
 	height:100%; 
+	margin:auto;
+	border-radius: 50%;
 }
 #centerbox #name{
-	height:10%;
-	background: red; 
-	clear: both;
+	height:4%;
+	width:100%; 
+	margin: auto;
+	text-align: center;
+	background: red;
 }
 #centerbox #good{
-   float: left;
-   width:10%;
-   height:10%; 
-   background: green; 
+	line-height: 140%;
+	float:left;
+	height:4%; 
+	width:40%;
+	font-size:1.1em;
+	margin: auto;
+	text-align: right;
 }
 #centerbox #middle{
-   float: left;
-   width:10%;
-   height:10%; 
-   background: green; 
+	float:left;
+	line-height:140%;
+	font-size:1.1em;
+	height:4%; 
+	width:20%; 
+	margin: auto;
+	text-align: center;
 }
-#centerbox #bad{
-   float: left;
-   height:10%; 
-   width:10%;
-   background: green; 
+#centerbox #bad {
+	float: left;
+	height: 4%;
+	line-height:140%;
+	font-size:1.1em;
+	width: 40%;
+	margin: auto;
+	text-align: left;
 }
 #centerbox #xy{
 	clear:both;
-	height:10%;
-	background: red; 
+	height:4%; 
+	width:100%; 
+	line-height:140%;
+	font-size:1.1em;
+	margin: auto;
+	text-align: center;
+	background: red;
 }
 #centerbox input{
-	background: green;
-	height:10%; 
+	background: #fff;
+	float:left;
+	width:33.33%;
+	margin-left: 0;
+	font-size:1em;
+	/*border-radius:5px; */
+	height:5%;
+}
+#centerbox #evalcontent{
+	clear:both;
+	width:100%;
+	height:67%;
+	background: red;  
+
 }
 
-#centerbox #evalcontent{
-	background: red;
-	height:40%; 
-}
 #centerbox #pre{
-	float:left;
-	width:10%;  
-	background: green;
-	height:10%; 
+	width:40%;
+	height:6%;
+	float:left; 
+	text-align: center;
+	background: yellow;
+	font-size:1.2em; 
+	line-height:200%; 
 }
 #centerbox #page{
 	float:left;
-	width:10%;  
-	background: green;
-	height:10%;
+	width:20%;
+	height:6%; 
+	line-height:200%;  
+	text-align: center;
 }
 #centerbox #next{
-	float:left;
-	width:10%;  
+	width: 40%;
+	height:6%; 
+	float:right;
+	text-align: center;
 	background: green;
-	height:10%;
+	font-size:1.2em; 
+	line-height:200%; 
 }
-
 
 #footer{
     margin-top: 1%;

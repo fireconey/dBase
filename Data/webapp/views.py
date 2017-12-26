@@ -13,8 +13,20 @@ def  regist(request):
 def  ld(request):
     return  render(request,"pages/loading.html")
 
-def ldinfo(request):
+def di(request):
     return  render(request,"pages/ldinfo.html")
 
 def datainfo(request):
     return  render(request,"pages/datainfo.html")
+
+def goods(request):
+    return  render(request,"pages/goods.html")
+
+def gb(request):
+    return  render(request,"pages/goodsbackstage.html")
+
+def tim(request):
+    return render(request,"pages/timenews.html")
+
+def eval(request):
+    return render(request,"pages/eval.html")

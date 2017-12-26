@@ -1,29 +1,37 @@
 *{
-	box-sizing:border-box;
-	margin: 0;
+	margin:0;
 	padding:0;
-}
-body{
-	/*background: red;*/
-	min-height:600px;
-	min-width: 900px;
-	margin: auto;
+	box-sizing: border-box;
+
 }
 
+body{
+	
+}
 #container{
 	margin:auto;
-	height:100%;
 	width:80%;
+	min-width:850px;
+	
 }
 #header{
 	width:100%;
-	height:10%;
-	background: red;
+	height:21.36%;
+	margin-bottom:1%;
+	box-shadow: 5px 5px 3px #8F8F8F; 
+	
 }
-
-
+#ad{
+	height:80%;
+	width:100%;
+	background:yellow;
+}
+#ad img{
+	height: 100%;
+	width: 100%;
+}
 #topbar{
-	height:100%;
+	height:20%;
 	width:100%;
 	background:blue;
 	position: relative;
@@ -36,28 +44,23 @@ body{
 }
 #topbar #name{
 
-	margin-top:3%;
+	margin-top:2.5%;
 	margin-left: 1%;
 	color:#FFF;
 	float:left;
 }
 
 #topbar ul{
-	width: 70%;
 	height:60%;
 	margin: auto;
-	margin-top:2.5%;
-	float:left;
-	background: red;
-	
+	margin-top:2%;
+	float: left;
 }
 
 #topbar ul li{
-
 	height:100%;
 	list-style:none;
-	margin-left:10%;
-	margin-top: 3%;
+	margin-left:100px;
 	float:left;
 }
 
@@ -68,49 +71,89 @@ body{
 	font-size: 17px;
 	color:#FFF;
 }
-
-
-
-
-
-
-
+/******************以下为详细内容***************/
 
 
 
 
 #content{
-	height: 80%;
+	width:100%; 
+	height:59.82%;
+	background: red;
+	box-shadow: 5px 5px 3px #8F8F8F; 
 }
 
 
 
-#content #img{
-	width:30%; 
+#content #otherinfo{
+	width:40%; 
+	height:100%; 
+	padding-top:1%; 
 	float: left;
+	background: yellow;
 	
-	margin-top: 10%;
 
 }
 
-#content #img .usrxy{
+
+#content #otherinfo img{
+	height: 15%;
+	border-radius: 50%;
+	display: block;
+	margin: auto;
+
+}
+
+#content #otherinfo #usrxy{
+	width:100%;
+	height:14%;   
 	background: red;
 	text-align: center;
 }
-#content #img img{
-	width: 100%;
-	border-radius: 50%;
+#otherinfo #achievment{
+	background: green;
+	height:71%; 
 
+}
+#achievment label{
+	float: right;
+	height:15%;
+	width: 33.3%;
+	background:blue; 
+	padding-top:5%; 
+	font-size: 120%;
+	text-align: right;
+
+
+}
+#achievment input{
+	width:40%; 
+}
+
+#achievment #edit{
+	clear:both; 
+	height:70%;
+	width:100%;
+}
+#achievment #submit{
+	display: block;
+	background: #fff;
+	width:100%;
+	height:10%; 
+	font-size:1.2em; 
+	margin:auto;
+	margin-top:1%;
+	border-radius: 3px;
+	border-style: none;
 }
 
 #content  #usrinfo{
 	height:100%;
-	width:64%;
+	width:60%;
 	background: blue; 
 	color:#FFF;
-	float: right;
+	float:right;
 
-	margin-top: 1%;
 }
 
 #content  #usrinfo div{
@@ -138,4 +181,14 @@ body{
 
 #content #usrinfo #call{
 	height: 20%;
+}
+
+
+#footer{
+    margin-top:10px; 
+	clear:both;
+	height:17.1%;
+	width:100%;
+	background:green;
+	box-shadow: 5px 5px 3px #8F8F8F; 
 }

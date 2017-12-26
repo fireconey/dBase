@@ -1,1 +1,1 @@
-window.onload=function(){	initbody()}window.onresize=function(){	initbody()}function initbody(){	var h=window.innerHeightvar ob=document.getElementsByTagName("body")[0]ob.style.height=1800+h+"px"}
+window.onload=function(){	initbody()}window.onresize=function(){	initbody()}function initbody(){	var h=window.innerHeightvar ob=document.getElementById("container")var w=ob.offsetWidth    ob.style.height=w/0.5688+"px"}

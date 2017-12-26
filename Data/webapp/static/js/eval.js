@@ -1,17 +1,15 @@
 window.onload=function(){
 	initbody()
-	
 }
-
 window.onresize=function(){
 	initbody()
+
 }
 
-function initbody()
-{
-	var h=window.innerHeight
+function initbody(){
 	var ob=document.getElementById("container")
 	var w=ob.offsetWidth
-	    ob.style.height=w/5.12+"px"
-	    ob.style.marginTop=(h-w/5.12)/2+"px"
+	
+	ob.style.height=w/0.873+"px"
+
 }

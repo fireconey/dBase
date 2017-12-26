@@ -1,16 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="refresh" content="2">
 	<title>goodstrade</title>
-	<link rel="stylesheet" href="../style/goods.css">
-	<script type="text/javascript" src="../js/goods.js"></script>
+	<link rel="stylesheet" href={% static "style/goods.css" %}>
+	<script type="text/javascript" src={% static "js/goods.js" %}></script>
 </head>
 <body>
 	<div id="container">
 		<header id="header">
-			<nav id="topbar"> <img src="../img/loading.jpg" alt="登陆的头像">
+			<div id="ad"><img src={%  static "img/banner/timg.jpg"%}></div>
+			<nav id="topbar"> <img src={% static "img/loading.jpg"%} alt="登陆的头像">
 				<div id="name">姓名</div>
 				<ul>
 					<li><a href="#">首页</a></li>
@@ -23,20 +25,28 @@
 		</header>
 		<section  id="content">
 			<div id="sell">
+
 				<div id="title">
 					标题
 				</div>
-				<div id="call">
-					联系方式
+				<div id="usrinfo">
+					<div id="img">
+						<img src={% static "/img/loading.jpg"%}>
+						<div id="name">田华</div>
+						<div id="eva">
+							<div id="good" class="le">好评123456</div>
+							<div id="middle"  class="le">中评12345</div>
+							<div id="bad"  class="le">差评1234566</div>
+						</div>
+						<div id="xy">信用度121</div>
+					</div>
+					<div id="calldata">11</div>
 				</div>
-				<div id="explain">
-					详述
-				</div>
-				
+
 			</div>
 			<div id="buy">
 				<div id="title">
-				   需求
+					需求
 				</div>
 				<div id="th">
 					物品1(x2斤)
@@ -45,11 +55,27 @@
 					详述
 					或图片
 				</div>
-
-				
 			</div>
-
 		</section>
+			<section id="explain">
+				展示用的
+				<br>
+				<br>
+				<br><br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+			</section>
+		<footer id="footer">
+			<div>电话：13957613802</div>
+			<div>版权@13957613802</div>
+		</footer>
 	</div>
 </body>
 </html>
