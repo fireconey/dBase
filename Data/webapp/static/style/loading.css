@@ -17,8 +17,10 @@ body{
 #container{
 	width: 100%;
 	min-width:800px; 
-	background-color: rgba(0,0,0,0.3);
+	/*background-color: rgba(0,0,0,0.3);*/
+	background: #2E8B57;
 	margin: auto;
+
 
 }
 
@@ -27,10 +29,14 @@ body{
 	color:#FFF;
 	width: 45%;
 	height: 100%;
-	background-color: rgba(34,139,34,1);
+	/*background-color: rgba(34,139,34,1);*/
+	/*background: #FFF;*/
+	background:green; 
 	margin:auto;
 	padding-top:1%;
 	padding-right:3%;
+	box-shadow:3px 0px 20px #000; 
+
 	
 }
 #fom label{
