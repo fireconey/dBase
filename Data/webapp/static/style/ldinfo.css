@@ -6,6 +6,7 @@
 
 body{
 
+background-color: rgba(211,211,211,0.5);
 	
 
 }
@@ -34,7 +35,7 @@ body{
 #topbar{
 	height:20%;
 	width:100%;
-	background:blue;
+	background-color: rgba(34,139,34,1);
 	position: relative;
 }
 #topbar img{
@@ -53,13 +54,10 @@ body{
 }
 #topbar ul{
 
-
 	height:60%;
 	margin: auto;
 	margin-top:2%;
 	float: left;
-	
-	
 }
 
 #topbar ul li{
@@ -71,7 +69,6 @@ body{
 
 #topbar ul li a{
 	display: block;
-	background:blue;
 	text-decoration:none;
 	font-size: 17px;
 	color:#FFF;
@@ -84,9 +81,11 @@ body{
 	width: 100%;
 	height:56.1%;
 	margin-top: 1%;
-	background: green;
+	background: #FFF;
+	/*background-color: rgba(42,41,46,0.1);*/
 	padding-top:1%; 
 	box-shadow: 5px 5px 3px #8F8F8F;
+	/*border:0.5px solid black /*rgba(192,192,192,1)*/;*/
 }
 
 
@@ -103,12 +102,13 @@ body{
 #ldinfoim{
 	width:10%;
 	height:4%; 
+	color:green;
 	text-align: center;
 	margin:auto;
 }
 #content #fo{
 	display: block;
-	background: #CCC;
+	/*background-color: rgba(34,139,34,1);*/
 	margin:auto;
 	margin-top:1%;
 	width: 40%;
@@ -120,16 +120,21 @@ body{
 	height:5%; 
 	margin-left:3%;
 	font-size:1.1em;
-	color:#FFF;
+	color:green;
 }
 #content  #fo input{
 	margin-top:4%;
 	height:8%;
 	width:80%; 
 	font-size: 1em;
+	color: red;
+	border-style: none;
+	/*border:1px dashed green;*/
+	/*color:#ccc;*/
 }
 #content #fosubmit{
-	 background:#fff; 
+	 background:green; 
+	 color:#FFF!important;
 	 /*display: block;*/
 	 float:right;
 	 width:30%!important; 
@@ -143,6 +148,8 @@ body{
 	clear:both;
 	height:18.7%;
 	width:100%;
-	background:green;
+	color:#FFF;
+	background:green!important;
+	/*border:1px solid rgba(192,192,192,1);*/
 	box-shadow: 5px 5px 3px #8F8F8F;
 }
