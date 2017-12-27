@@ -78,6 +78,7 @@ background-color: rgba(211,211,211,0.5);
 /************------内容开始-------**************/
 
 #content{
+
 	width: 100%;
 	height:56.1%;
 	margin-top: 1%;
@@ -86,6 +87,8 @@ background-color: rgba(211,211,211,0.5);
 	padding-top:1%; 
 	box-shadow: 5px 5px 3px #8F8F8F;
 	/*border:0.5px solid black /*rgba(192,192,192,1)*/;*/
+	 border:1px solid red!important;
+
 }
 
 
@@ -105,10 +108,13 @@ background-color: rgba(211,211,211,0.5);
 	color:green;
 	text-align: center;
 	margin:auto;
+	
+
 }
 #content #fo{
 	display: block;
 	/*background-color: rgba(34,139,34,1);*/
+	border-top:1px solid green;
 	margin:auto;
 	margin-top:1%;
 	width: 40%;
@@ -141,6 +147,7 @@ background-color: rgba(211,211,211,0.5);
 	 margin-right:30%;
 	 border-radius:7px; 
 	 height:10%; 
+	 margin-top:15%!important;
 }
 
 #footer{

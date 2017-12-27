@@ -6,19 +6,20 @@
 }
 
 body{
-
+	background-color: rgba(211,211,211,0.5);
 	
 }
 #container{
 	margin:auto;
 	width:80%; 
-	}
+	min-width:850px; 
+}
 
 #header{
 	width:100%;
 	height:16.4%;
 	margin-bottom:1%;
-	box-shadow: 5px 5px 3px #8F8F8F; 
+	box-shadow: 5px 5px 3px #8F8F8F;  
 	
 }
 #ad{
@@ -33,7 +34,7 @@ body{
 #topbar{
 	height:20%;
 	width:100%;
-	background:blue;
+	background:green;
 	position: relative;
 }
 #topbar img{
@@ -66,7 +67,6 @@ body{
 
 #topbar ul li a{
 	display: block;
-	background:blue;
 	text-decoration:none;
 	font-size: 17px;
 	color:#FFF;
@@ -78,105 +78,137 @@ body{
 #container #sell{
 	height:39.34%; 
 	width:100%; 
-	background: yellow;
+	background: #FFF;
 	padding-top: 1%;
 	box-shadow: 5px 5px 3px #8F8F8F;
+	border:0.5px solid #ccc;
 }
 #sell label{
-    height:6%; 
-    width:50%;
-    padding-top:1%;  
-    font-size: 1.2em;
-	margin-left:1%;
+	display: block;
+	float:left;
+	height:8%; 
+	width:50%;
+	font-size: 1.1em;
 	padding-left: 1%;
 	text-align: center;
 	margin:auto;
+	/*color:#FFF;*/
+	/*background: green;*/
 }
 
 #sell label input{
-	width:30%;
-	height:5%; 
+	border: 1.5px dashed green;
+	width:55%;
+	height:70%; 
+	margin-top:1%!important; 
 	margin:auto;
 }
 #sell #detalab{
+	clear:both;
 	display: block;
 	width: 100%;
-	height:7%; 
+	height:9%; 
 	margin: 0;
 	display: block;
-	font-size: 1.2em;
-	background: #CCc;
+	font-size: 1.3em;
+	background:green;
+	color:#FFF;
+	padding-top:1%; 
 }
 #sell  #detail{
-	height:88%;
+	clear: both;
+	height:83%;
 	width:100%;
-	overflow-y: visible;
-	background: green;
+	overflow-y: auto;
+	/*background: green;*/
+	margin:auto;
+	border-style:none;
+	outline-style: none;
+
 }
 
 
 
 #container #buy{
+
 	margin-top:1%; 
 	height: 39.34%;
 	width: 100%;
-	background: blue;
+	background: #FFF;
 	box-shadow: 5px 5px 3px #8F8F8F;
+	border:0.5px solid #ccc;
+
 }
 
 #buy #need{
 	padding-top: 1%;
 	width: 100%;
-	height:7%; 
-	font-size: 1.2em;
-	background:#ccc;
+	height:8%; 
+	font-size: 1.3em;
 	text-align: center;
+	background: green;
+	color:#FFF;
 }
 #buy #leftcontainer{
-	height:93%;
+	margin-top:0.3%; 
+	/*border:1px solid green;*/
+	height:91%;
 	width: 50%;
-	background: red; 
 	float: left;
+	margin-left: 0.3%;
 }
 #leftcontainer #spec{
+	color:green;
 	width: 100%;
 	height:5%; 
 	margin-top:1.5%;
-	background: yellow;
+
 }
 #spec #title{
 	width:40%;
 	height:100%;  
+	border:1px dashed green;
 }
 #leftcontainer #other1{
 	height: 100%;
-	width: 20%;
+	width: 17.5%;
+	border:1px dashed green;
 }
 #leftcontainer #other2{
 	height: 100%;
 	width: 10%;
+	border:1px dashed green;
 }
 
 #leftcontainer #add{
-	background: #ccc;
-	width:18%;
-	height:5%; 
-	border-radius:8px; 
-	display: block;
-	font-size:1.5em;
-	line-height: 20px;
+	background:green;
+	width:100%;
+	height:7%; 
+	font-size:2em; 
 	margin:auto;
-	margin-top:2%;
-
+	margin-top:2.5%;
+	color:#FFF;
+	border-style: none;
+	text-align: center;
+}
+#leftcontainer #add:active{
+	
+    background:#FFF;
+    color:green;	 
 
 }
-
 #buy #deta{
-	height: 93%;
-	width: 50%;
+	height: 91%;
+	width: 49%;
 	float: right;
 	overflow-y: visible;
-	border: 1px dashed black;
+	margin-top:0.3%;
+	margin-right:0.2%; 
+	border: 1px solid green;
+	overflow-y: auto;
+	outline-style: none;
+
+
 }
 
 
@@ -184,10 +216,11 @@ body{
 #footer{
 	clear:both;
 	margin-top:1%; 
-    margin-bottom:10px; 
+	margin-bottom:10px; 
 	height:13.12%;
 	width:100%;
 	background:green;
+	color:#FFF;
 	box-shadow: 5px 5px 3px #8F8F8F; 
 
 }
