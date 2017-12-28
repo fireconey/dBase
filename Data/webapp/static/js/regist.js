@@ -11,7 +11,7 @@ window.onresize=function(){
 
 function initbody()
 {
-	var ob=document.getElementById("container")
+	var ob=document.getElementById("inner")
 	var h=window.innerHeight
 	var w=ob.offsetWidth
 	    ob.style.height=w/2.56+"px"

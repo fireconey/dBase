@@ -1,0 +1,128 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+body{
+	/*background: #FFF;*/
+	background-image:url("../img/background/ho.jpg"); 
+
+}
+
+#container{
+	width:100%;
+	height:400px; 
+	background:none;
+	min-width:850px; 
+}
+#container img{
+	display: block;
+	height:15%; 
+	border-radius: 50%; 
+	margin:auto;
+
+}
+
+#inner{
+	width:100%; 
+	height:85%;
+	/*background:#FFF;  */
+	background:rgba(39,123,69,0.95);
+
+}
+
+#inner #back{
+	margin: auto;
+	clear: both;
+	width:65%; 
+	max-width:650px;
+	height:100%; 
+	/*background:#FFF;*/
+
+}
+
+#lef{
+	left:16%;
+	width:40%; 
+	height:100%; 
+	/*background: #FFF;*/
+	float:left;
+	color:#FFF; 
+	padding-top:3%; 
+
+}
+#lef input{
+	color:yellow;
+	width:100%; 
+	height:8%; 
+	background: none;
+	border: 1.5px dashed #FFF;
+	/*margin-top:6%; */
+	margin-left:1%; 
+}
+#lef #sex{
+	background: none;
+	width:100%;
+	height:8%; 
+	border: 1.5px dashed #FFF; 
+	-webkit-appearance: none;
+	border-radius: 0px;
+	color:yellow;
+	margin-left:1%;
+
+}
+
+#lef #yes{
+	width:100%;
+	height:10%; 
+	margin-left:0!important;  
+	margin-top:8%;
+	line-height:150%;
+	border:1px solid #FFF;
+	background:#FFF;  
+	margin-left:1%!important;  
+	color:black;
+}
+
+
+#rit{
+	padding-top:3%; 
+	float:right;
+	width:45%;
+	height:100%; 
+	/*background: #FFF;*/
+	padding-left:5%; 
+	color:#FFF; 
+}
+#rit input{
+	color:yellow;
+	width:100%; 
+	height:8%; 
+	background: none;
+	border: 1.5px dashed #FFF;
+
+
+}
+
+#rit #cancel{
+	width:100%;
+	height:10%; 
+	margin-left:0!important;  
+	margin-top:8%;
+	padding:0;
+	line-height:150%;
+	color:black;
+	border:1px solid #FFF;
+	background: #fff;   
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="refresh" content="2000">
+	<meta charset="UTF-8">
+	<script type="text/javascript" src={% static "js/reg.js" %}></script>
+	<link rel="stylesheet" href={% static "style/reg.css" %}>
+	<title>reg</title>
+</head>
+<body>
+	<div id="container">
+		<img src={% static "img/loading.jpg"%} alt="头像">
+		<div  id="inner">
+			<div id="back">
+				<div id="lef">
+					<label for="usr">输入账号
+						<input type="text" id="usr">
+					</label>
+					<label for="passwd">输入密码
+						<input type="text" id="passwd">
+					</label>
+					<label for="passwd2">验证密码
+						<input type="text" id="passwd2">
+					</label>
+					输入性别
+					<select id="sex">
+						<option value="man"> 男</option>
+						<option value="women"> 女</option>
+					</select>
+
+					<input type="button" value="确定" id="yes">
+				</div>
+				<div id="rit">
+					<label for="birth">出生日期
+						<input type="text" id="birth">
+					</label>
+					<label for="wx">微信号码
+						<input type="text" id="wx">
+					</label>
+					<label for="phone">电话号码
+						<input type="text" id="phone">
+					</label>
+					<label for="loc">地理位置
+						<input type="text" id="loc">
+					</label>
+			
+						<input type="button" value="取消" id="cancel">
+					
+					
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>

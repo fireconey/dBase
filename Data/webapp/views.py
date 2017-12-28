@@ -30,3 +30,5 @@ def tim(request):
 
 def eval(request):
     return render(request,"pages/eval.html")
+def reg(request):
+    return  render(request,"pages/reg.html")

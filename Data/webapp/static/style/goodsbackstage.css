@@ -9,7 +9,7 @@ body{
 	background-color: rgba(211,211,211,0.5);
 	
 }
-#container{
+#inner{
 	margin:auto;
 	width:80%; 
 	min-width:850px; 
@@ -75,7 +75,7 @@ body{
 
 
 /************************以下是详细内容******/
-#container #sell{
+#inner #sell{
 	height:39.34%; 
 	width:100%; 
 	background: #FFF;
@@ -129,7 +129,7 @@ body{
 
 
 
-#container #buy{
+#inner #buy{
 
 	margin-top:1%; 
 	height: 39.34%;
@@ -149,7 +149,7 @@ body{
 	background: green;
 	color:#FFF;
 }
-#buy #leftcontainer{
+#buy #leftinner{
 	margin-top:0.3%; 
 	/*border:1px solid green;*/
 	height:91%;
@@ -157,7 +157,7 @@ body{
 	float: left;
 	margin-left: 0.3%;
 }
-#leftcontainer #spec{
+#leftinner #spec{
 	color:green;
 	width: 100%;
 	height:5%; 
@@ -169,18 +169,18 @@ body{
 	height:100%;  
 	border:1px dashed green;
 }
-#leftcontainer #other1{
+#leftinner #other1{
 	height: 100%;
 	width: 17.5%;
 	border:1px dashed green;
 }
-#leftcontainer #other2{
+#leftinner #other2{
 	height: 100%;
 	width: 10%;
 	border:1px dashed green;
 }
 
-#leftcontainer #add{
+#leftinner #add{
 	background:green;
 	width:100%;
 	height:7%; 
@@ -191,7 +191,7 @@ body{
 	border-style: none;
 	text-align: center;
 }
-#leftcontainer #add:active{
+#leftinner #add:active{
 	
     background:#FFF;
     color:green;	 

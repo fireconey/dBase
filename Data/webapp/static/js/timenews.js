@@ -13,7 +13,7 @@ window.onresize=function(){
 
 function initbody()
 {
-	var ob=document.getElementById("container")
+	var ob=document.getElementById("inner")
 	var w=ob.offsetWidth
 	    ob.style.height=w/0.8752+"px"
 	    // alert(ob.offsetHeight)

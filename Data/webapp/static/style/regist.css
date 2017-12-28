@@ -11,12 +11,12 @@ body{
 
 
 }
-#container{
+#inner{
 	width:100%; 
 	min-width:800px; 
 	margin: auto;
 }
-#container #back{
+#inner #back{
 	background-color: rgba(0,0,0,0.5);
 	height:100%;
 	width:100%;  

@@ -9,7 +9,7 @@ window.onresize=function(){
 }
 
 function initbody(){
-	var ob=document.getElementById("container")
+	var ob=document.getElementById("inner")
 	var w=ob.offsetWidth
 	var header=document.getElementById("header")
 	var  content=document.getElementById("content")

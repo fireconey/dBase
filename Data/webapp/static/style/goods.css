@@ -10,7 +10,7 @@ body{
 	background-color: rgba(211,211,211,0.5);
 	
 }
-#container{
+#inner{
 	margin:auto;
 	width:80%;
 	min-width:850px;

@@ -28,5 +28,6 @@ urlpatterns = [
     url("gb", view.gb),
     url("tim",view.tim),
     url("eval",view.eval),
+    url("reg",view.reg),
 
 ]
