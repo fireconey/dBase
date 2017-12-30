@@ -3,17 +3,18 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="refresh" content="2">
+	<meta http-equiv="refresh" content="20000">
 	<title>loading</title>
 	<script type='text/javascript'  src={% static "js/loading.js"%}></script>
 	<link rel="stylesheet" href={% static "style/loading.css"%}>
 </head>
 <body>
 	<div id="inner">
-		<form id="fom" action="#" method="post">
-			<label for="user">账号：<input type="text" id="user" value="请输入账号"/>	</label>
+		<form id="fom" action="/oop/" method="post">
+			{% csrf_token %}
+			<label for="user">账号：<input type="text" id="user" value="请输入账号" name="usr">	</label>
 			
-			<label for="passwd">密码：<input type="text" id="passwd" value="请输入密码"/>	</label>
+			<label for="passwd">密码：<input type="text" id="passwd" value="请输入密码" name="passwd">	</label>
 			<div id="inp">
 				<input type="submit" value="确定" class="put">
 				<input type="button" value="取消" class="put">

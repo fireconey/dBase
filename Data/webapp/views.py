@@ -32,3 +32,8 @@ def eval(request):
     return render(request,"pages/eval.html")
 def reg(request):
     return  render(request,"pages/reg.html")
+
+def ld2in(request):
+    usr=request.POST["usr"]
+    name=user.objects.get(usr="th")
+    return render(request,"pages/test.html",{"usr":name})

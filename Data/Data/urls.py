@@ -29,5 +29,6 @@ urlpatterns = [
     url("tim",view.tim),
     url("eval",view.eval),
     url("reg",view.reg),
+    url("oop",view.ld2in),
 
 ]
