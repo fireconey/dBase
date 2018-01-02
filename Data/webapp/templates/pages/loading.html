@@ -3,27 +3,47 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="refresh" content="20000">
+	<meta http-equiv="refresh" content="2000">
 	<title>loading</title>
 	<script type='text/javascript'  src={% static "js/loading.js"%}></script>
 	<link rel="stylesheet" href={% static "style/loading.css"%}>
 </head>
 <body>
 	<div id="inner">
-		<form id="fom" action="/oop/" method="post">
+		<form id="fom" action="/ld/"  method="post" novalidate>
 			{% csrf_token %}
-			<label for="user">账号：<input type="text" id="user" value="请输入账号" name="usr">	</label>
-			
-			<label for="passwd">密码：<input type="text" id="passwd" value="请输入密码" name="passwd">	</label>
+			<label for="user">
+                账号：<input type="text" id="user"
+                          onkeyup="cleanspace(this)"
+                          value="{% if p.usr %}{{p.usr}}
+                                 {% else %}请输入账号
+                                 {% endif %}"
+                          name="usr">
+            </label>
+
+			<label for="passwd">
+                密码：<input type="password"
+                            id="passwd"
+                            onkeyup="cleanspace(this)"
+                            value="{% if p.passwd %}{{ p.passwd }}
+                                   {% else %}请输入密码
+                                   {% endif %}"
+                          name="passwd">
+            </label>
 			<div id="inp">
 				<input type="submit" value="确定" class="put">
 				<input type="button" value="取消" class="put">
 				<input type="button" value="注册" class="put">
 			</div>
-			
-			
 		</form>
+        <div id="err">
+            <span id="usrerr" class="err">
+                {{ obj.errors.usr }}
+            </span>
+            <span id="passwderr" class="err">
+                {{ obj.errors.passwd }}
+            </span>
+        </div>
 	</div>
-
 </body>
 </html>

@@ -1,5 +1,6 @@
 window.onload=function(){
 	initbody()
+
 	
 }
 
@@ -15,3 +16,9 @@ function initbody()
 	    ob.style.height=w/5.12+"px"
 	    ob.style.marginTop=(h-w/5.12)/2+"px"
 }
+
+// 正则表达式没有双引号
+function cleanspace(ob){
+		ob.value=ob.value.replace(/\s+/gi,"")
+}
+

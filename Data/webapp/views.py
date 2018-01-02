@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from webapp.models import user
+from webapp import models as model
+from django.http import HttpResponseRedirect
+from .forms import Loading as ldform
 # Create your views here.
 def index(request):
     #user.objects.create(usr="th",passwd="123",sex="男",
@@ -10,8 +12,18 @@ def index(request):
 def  regist(request):
     return  render(request,"pages/regist.html")
 
-def  ld(request):
-    return  render(request,"pages/loading.html")
+def  loading(request):
+    if request.method=="POST":
+        obj=ldform(request.POST)
+        if obj.is_valid():
+            data=obj.clean()
+            return  HttpResponseRedirect("index")
+        else:
+            return render(request,"pages/loading.html",
+                          {"obj":obj,"p":request.POST})
+    else:
+        obj=ldform()
+        return  render(request,"pages/loading.html",{"obj":obj})
 
 def di(request):
     return  render(request,"pages/ldinfo.html")
@@ -33,7 +45,14 @@ def eval(request):
 def reg(request):
     return  render(request,"pages/reg.html")
 
-def ld2in(request):
+def load2(request):
     usr=request.POST["usr"]
-    name=user.objects.get(usr="th")
-    return render(request,"pages/test.html",{"usr":name})
+    passwd=request.POST["passwd"]
+    db_usr="empty"
+    try:
+      db_usr=model.WebappUsr.objects.get(usr=str(usr))
+    except:
+        print("有异常")
+    if db_usr=="empty":
+        return render(request, "pages/test.html", {"usr":"cuwo"})
+    return HttpResponseRedirect("/index")
