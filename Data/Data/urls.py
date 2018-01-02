@@ -20,7 +20,7 @@ from webapp import views  as view
 urlpatterns = [
     url('admin/', admin.site.urls),
     url("index",view.index),
-    url('rg',view.regist),
+    url('regist',view.regist),
     url("ld",view.loading),
     # url("din",view.di),
     # url("df",view.datainfo),
