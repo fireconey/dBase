@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import  HttpResponse
 from webapp import models as model
 from django.http import HttpResponseRedirect
 from .forms import Loading as ldform
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 #登录检查标记
 flag=0
@@ -10,9 +11,23 @@ def index(request):
     #user.objects.create(usr="th",passwd="123",sex="男",
      #                   birth="19890615",email="1132224184@qq.com")
     return  render(request,"index.html",context={"th":11,"tu":34})
-
+@csrf_exempt
 def  regist(request):
-        return  render(request,"pages/regist.html")
+    initphoto="../static/img/loading.jpg"
+    if request.method=="POST":
+        file=request.FILES
+
+        try:
+            file=file["file"]
+            with  open( "static/"+file.name,"wb+")  as f:
+                for d in file:
+                     f.write(d)
+                f.close()
+        except:
+            pass
+        #bug是打开文件盒response不能再同级水平，否则返回的值有问题。
+        return HttpResponse("../static/"+file.name)
+    return  render(request,"pages/regist.html",{"im":initphoto})
 
 def  loading(request):
     global  flag
@@ -77,8 +92,7 @@ def tim(request):
 def eval(request):
     return render(request,"pages/eval.html")
 
-def regist(request):
-    return  render(request,"pages/reg.html")
+
 
 def load2(request):
     usr=request.POST["usr"]

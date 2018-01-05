@@ -1,93 +1,142 @@
 *{
 	margin:0;
 	padding:0;
-
+	box-sizing: border-box;
 }
 body{
-   
-	background-image:url(../img/background/s.jpg);
-	
-
-
+	/*background: #FFF;*/
+	background-image:url("../img/background/ho.jpg");
 
 }
+
+#container{
+	width:100%;
+	height:400px; 
+	background:none;
+	min-width:850px;
+
+}
+#container #file{
+	display: none;
+}
+#container img{
+	display: block;
+	height:15%; 
+	border-radius: 50%; 
+	margin:auto;
+
+}
+#container #changephoto{
+	display:none;
+	background: #FFF;
+	border:none;
+	height: 15%;
+	margin: auto;
+	text-align: center;
+	color:red;
+	border-radius:50%;
+}
+
 #inner{
 	width:100%; 
-	min-width:800px; 
-	margin: auto;
+	height:85%;
+	/*background:#FFF;  */
+	background:rgba(39,123,69,0.95);
+
 }
+
 #inner #back{
-	background-color: rgba(0,0,0,0.5);
-	height:100%;
-	width:100%;  
-
-}
-
-#fom{
-	box-sizing: border-box;
-	color:#FFF;
-	width:50%;
-	height: 100%;
-	background: green;
-    margin:auto;
-    padding-top:1%; 
-   
-}
-#fom label{
-	width:80%;
-	height:9.5%;  
-	display: block;
-	font-size:1.1em; 
-	margin:auto;
-	margin-top: 1%;
-	
-}
-#fom label input{
-	float:right;
-	margin-right:1%;
-	height:90%;
-	width:65%;
-	border-radius: 3px;
-	border:1px solid black;
-	font-size: 0.6em;
-
-
-}
-
-#fom #sex{
-   background:#f5fffa;
-   width:15%;
-   height:70%; 
-   font-size:1em;
-   margin-right: 51%;
-   float: right;
-   margin-top:1%; 
-}
-#fom .birth{
-	width:20.7%; 
-}
-
-
-#fom #inp{
-	margin-left:35%;
-	height:8%;
-	width: 60%;
-
-}
-
-#inp  .put{
-	
-	background:#FFF; 
-	border-radius: 5px 5px ;
-	outline: none;
-	width: 40.8%;
+	margin: auto;
+	clear: both;
+	width:65%; 
+	max-width:650px;
 	height:100%; 
-    font-size: 100%;
-    margin-top: 2%;
-    margin-left: 3.6%;
-    border:1px solid black;
-    
-	
+	/*background:#FFF;*/
+
 }
+
+#lef{
+	left:16%;
+	width:40%; 
+	height:100%; 
+	/*background: #FFF;*/
+	float:left;
+	color:#FFF; 
+	padding-top:3%; 
+
+}
+#lef input{
+	color:yellow;
+	width:100%; 
+	height:8%; 
+	background: none;
+	border: 1.5px dashed #FFF;
+	/*margin-top:6%; */
+	margin-left:1%; 
+}
+#lef #sex{
+	background: none;
+	width:100%;
+	height:8%; 
+	border: 1.5px dashed #FFF; 
+	-webkit-appearance: none;
+	border-radius: 0px;
+	color:yellow;
+	margin-left:1%;
+
+}
+
+#lef #yes{
+	width:100%;
+	height:10%; 
+	margin-left:0!important;  
+	margin-top:8%;
+	line-height:150%;
+	border:1px solid #FFF;
+	background:#FFF;  
+	margin-left:1%!important;  
+	color:black;
+}
+
+
+#rit{
+	padding-top:3%; 
+	float:right;
+	width:45%;
+	height:100%; 
+	/*background: #FFF;*/
+	padding-left:5%; 
+	color:#FFF; 
+}
+#rit input{
+	color:yellow;
+	width:100%; 
+	height:8%; 
+	background: none;
+	border: 1.5px dashed #FFF;
+
+
+}
+
+#rit #cancel{
+	width:100%;
+	height:10%; 
+	margin-left:0!important;  
+	margin-top:8%;
+	padding:0;
+	line-height:150%;
+	color:black;
+	border:1px solid #FFF;
+	background: #fff;   
+}
+
+
+
+
+
+
+
+
+
 
 
