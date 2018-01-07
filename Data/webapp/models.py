@@ -12,9 +12,6 @@ class WebappCt(models.Model):
     usr = models.ForeignKey('WebappUsr', models.DO_NOTHING, db_column='usr')
     ct = models.CharField(unique=True, max_length=100)
 
-    class Meta:
-        managed = False
-        db_table = 'webapp_ct'
 
 
 class WebappGrp(models.Model):
@@ -23,9 +20,6 @@ class WebappGrp(models.Model):
     grp = models.CharField(max_length=8)
     loc = models.TextField()  # This field type is a guess.
 
-    class Meta:
-        managed = False
-        db_table = 'webapp_grp'
 
 
 class WebappImg(models.Model):
@@ -33,9 +27,7 @@ class WebappImg(models.Model):
     usr = models.ForeignKey('WebappUsr', models.DO_NOTHING, db_column='usr')
     img = models.CharField(unique=True, max_length=8)
 
-    class Meta:
-        managed = False
-        db_table = 'webapp_img'
+
 # Unable to inspect table 'webapp_infolead'
 # The error was: list index out of range
 
@@ -46,9 +38,7 @@ class WebappLoc(models.Model):
     shi = models.CharField(max_length=8)
     xiang = models.CharField(max_length=8)
 
-    class Meta:
-        managed = False
-        db_table = 'webapp_loc'
+
 
 
 class WebappUsr(models.Model):
@@ -57,11 +47,9 @@ class WebappUsr(models.Model):
     passwd = models.CharField(max_length=30)
     sex = models.CharField(max_length=10)
     birth = models.CharField(max_length=30)
-    email = models.CharField(max_length=30)
+    wx=models.CharField(max_length=30)
     phone = models.CharField(max_length=30)
     loc = models.TextField()  # This field type is a guess.
     infold = models.TextField(blank=True, null=True)  # This field type is a guess.
+    img=models.CharField(max_length=30)
 
-    class Meta:
-        managed = False
-        db_table = 'webapp_usr'

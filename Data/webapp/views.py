@@ -3,32 +3,74 @@ from django.http import  HttpResponse
 from webapp import models as model
 from django.http import HttpResponseRedirect
 from .forms import Loading as ldform
+from . import forms as form
 from django.views.decorators.csrf import csrf_exempt
+import os
+import  threading
 # Create your views here.
 #登录检查标记
-flag=0
+
 def index(request):
     #user.objects.create(usr="th",passwd="123",sex="男",
      #                   birth="19890615",email="1132224184@qq.com")
     return  render(request,"index.html",context={"th":11,"tu":34})
+
+
 @csrf_exempt
 def  regist(request):
+    dic={}
     initphoto="../static/img/loading.jpg"
     if request.method=="POST":
         file=request.FILES
+        usr=request.POST
+        umodle=form.Regist(usr)
+        onlyu=form.Usr(usr)
+        if umodle.is_valid() and usr["flag"]=="submit":
+            data=umodle.clean()
+            try:
+                initphoto="../static/img/"+file["file"].name
+            except:
+                initphoto="../static/img/loading.jpg"
+            model.WebappUsr(usr=data["usr"],
+                            passwd=data["passwd"],
+                            sex=data["sex"],
+                            birth=data["birth"],
+                            wx=data["wx"],
+                            phone=data["phone"],
+                            loc=data["loc"],
+                            img=initphoto
+                            ).save()
 
-        try:
-            file=file["file"]
-            with  open( "static/"+file.name,"wb+")  as f:
-                for d in file:
-                     f.write(d)
-                f.close()
-        except:
-            pass
-        #bug是打开文件盒response不能再同级水平，否则返回的值有问题。
-        return HttpResponse("../static/"+file.name)
-    return  render(request,"pages/regist.html",{"im":initphoto})
+            return  HttpResponse("null")
+        elif usr["flag"]=="submit":
+            for i in umodle.errors:
+                dic[i]=umodle.errors.get(i)
+            return HttpResponse(str(dic))
 
+        if onlyu.is_valid() and usr["flag"]=="im":
+            print(22)
+            if not os.path.exists("webapp/static/"+usr["usr"]):
+                os.mkdir("webapp/static/"+usr["usr"])
+            with open("webapp/static/"+usr["usr"]+"/"+file["file"].name,"wb+") as f:
+                for i in file["file"]:
+                    f.write(i)
+            return HttpResponse("static/"+usr["usr"]+"/"+file["file"].name)
+        else:
+            for i in onlyu.errors:
+                dic[i]=onlyu.errors.get(i)
+            return  HttpResponse(str(dic))
+    else:
+        obj=form.Regist()
+        return  render(request,"pages/regist.html",{"im":initphoto,
+                                                    "obj":obj})
+
+
+
+
+
+
+
+flag=0
 def  loading(request):
     global  flag
     t = True  #获取的密码是『请输入密码』的标记
@@ -105,5 +147,7 @@ def load2(request):
     if db_usr=="empty":
         return render(request, "pages/test.html", {"usr":"cuwo"})
         return HttpResponseRedirect("/index")
+
+
 
 
