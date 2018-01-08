@@ -72,6 +72,11 @@ body{
 	font-size: 17px;
 	color:#FFF;
 }
+#topbar input[name="mark"]{
+	display: none;
+	background: red;
+}
+
 /******************以下为详细内容***************/
 
 

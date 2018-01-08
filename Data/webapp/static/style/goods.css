@@ -73,6 +73,10 @@ body{
 }
 
 
+#topbar input[name="mark"]{
+	display: none;
+	background: red;
+}
 
 /*******************详细内容****************/
 

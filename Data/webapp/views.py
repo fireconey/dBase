@@ -10,10 +10,18 @@ import  threading
 # Create your views here.
 #登录检查标记
 flag=0
+utemp=0
 def index(request):
-    #user.objects.create(usr="th",passwd="123",sex="男",
-     #                   birth="19890615",email="1132224184@qq.com")
-    return  render(request,"index.html",context={"th":11,"tu":34})
+    ob="登录"
+    rg="注册"
+    if flag==0:
+        ob="登录"
+    if flag==1:
+        ob="退出"
+        rg="已登录"
+
+    return  render(request,"index.html",{"ob":ob,
+                                         "rg":rg})
 
 
 @csrf_exempt
@@ -45,8 +53,7 @@ def  regist(request):
                             loc=data["loc"],
                             img=initphoto
                             ).save()
-
-            return  HttpResponse("null")
+            return  HttpResponse("temp")
         elif usr["flag"]=="submit":
             for i in umodle.errors:
                 dic[i]=umodle.errors.get(i)
@@ -77,7 +84,7 @@ def  regist(request):
 
 
 def  loading(request):
-    global  flag
+    global  flag,utemp
     t = True  #获取的密码是『请输入密码』的标记
     if request.method=="POST":
         r = request.POST
@@ -95,6 +102,7 @@ def  loading(request):
         if obj.is_valid():
             data=obj.clean()
             flag=1
+            utemp=u
             return  HttpResponseRedirect("/index")
         else:
             flag=0
@@ -108,7 +116,6 @@ def  loading(request):
                   "b":t,
                   "pw":pw})
     else:
-        flag=0
         obj=ldform()
         return  render(request,"pages/loading.html",{"obj":obj,
                  "b":t,
@@ -119,20 +126,33 @@ def  loading(request):
 
 def topbar(request):
     global flag
+    print(flag)
     if flag==1 and request.method=="POST":
         data=request.POST
-        mark=data["mark"]
+        mark=data["mark"].strip()
         if mark=="img":
             return  HttpResponseRedirect("userInfo")
         elif mark=="quite":
             flag=0
             return  HttpResponseRedirect("/index")
+        return HttpResponseRedirect(mark)
+
+    elif flag==0 and request.method=="POST":
+        data=request.POST
+        mark=data["mark"].strip()
+        if mark=="img":
+            return HttpResponseRedirect("index")
+        return  HttpResponseRedirect(mark)
+
+
+        # return  HttpResponseRedirect("index")
     else:
-        print(222)
         return HttpResponseRedirect("/index")
 
-
-
+def quite(request):
+    global flag
+    flag=0
+    return  HttpResponseRedirect("/index")
 
 
 
@@ -141,37 +161,118 @@ def topbar(request):
 
 
 def userInfo(request):
-    return  render(request,"pages/ldinfo.html")
+    global  utemp
+    ob = "登录"
+    rg = "注册"
+    query=model.WebappUsr
+    usr=""
+    sex=""
+    birth=""
+    passwd=""
+    wx=""
+    phone=""
+    loc=""
+    img=""
+    if flag == 1:
+        ob = "退出"
+        rg = "已登录"
+    if request.method=="POST":
+        print("yuyuy"+utemp)
+        data=request.POST
+        query(usr=data["usr"],
+              sex=data["sex"],
+              birth=data["birth"],
+              passwd=data["passwd"],
+              wx=data["wx"],
+              phone=data["phone"],
+              loc=data["loc"])
+        query.save()
+        utemp=data["usr"]
 
-def datainfo(request):
-    return  render(request,"pages/datainfo.html")
+    try:
+        query = query.objects.get(usr=utemp)
+        usr = query.usr
+        print(query.usr + "11")
+        sex = query.sex
+        if int(sex)==0:
+            sex="男"
+        elif int(sex)==1:
+            sex="女"
+        birth = query.birth
+        passwd = query.passwd
+        wx = query.wx
+        phone = query.phone
+        loc = query.loc
+        img=query.img
+    except:
+        print("查询有错误")
+    return  render(request,"pages/uinfo.html",
+                   {"ob":ob,
+                     "rg":rg,
+                    "usr":usr,
+                    "sex":sex,
+                    "birth":birth,
+                    "passwd":passwd,
+                    "wx":wx,
+                    "phone":phone,
+                    "loc":loc,
+                    "img":img
+                   })
 
-def goods(request):
-    return  render(request,"pages/goods.html")
 
-def gb(request):
-    return  render(request,"pages/goodsbackstage.html")
 
-def tim(request):
-    return render(request,"pages/timenews.html")
+def goodsBackstage(request):
+    ob="登录"
+    rg = "注册"
+    if flag==1:
+        ob="退出"
+        rg = "已登录"
+    return  render(request,"pages/goodsbackstage.html",
+                   {"ob":ob,
+                     "rg":rg
+
+                   })
+
+def info(request):
+    ob="登录"
+    rg = "注册"
+    if flag==1:
+        ob="退出"
+        rg = "已登录"
+    return  render(request,"pages/info.html",
+                   {"ob":ob,
+                     "rg":rg
+
+                   })
+
+def timenews(request):
+    ob="登录"
+    rg = "注册"
+    if flag==1:
+        ob="退出"
+        rg = "已登录"
+    return  render(request,"pages/timenews.html",
+                   {"ob":ob,
+                     "rg":rg
+
+                   })
 
 def eval(request):
-    return render(request,"pages/eval.html")
+    ob="登录"
+    rg = "注册"
+    if flag==1:
+        ob="退出"
+        rg = "已登录"
+    return  render(request,"pages/eval.html",
+                   {"ob":ob,
+                     "rg":rg
 
-
-
-def load2(request):
-    usr=request.POST["usr"]
-    passwd=request.POST["passwd"]
-    db_usr="empty"
-    try:
-      db_usr=model.WebappUsr.objects.get(usr=str(usr))
-    except:
-        print("有异常")
-    if db_usr=="empty":
-        return render(request, "pages/test.html", {"usr":"cuwo"})
-        return HttpResponseRedirect("/index")
-
-
-
-
+                   })
+def goods(request):
+    ob="登录"
+    rg="注册"
+    if flag==1:
+        ob="退出"
+        rg = "已登录"
+    return  render(request,"pages/goods.html",{"ob":ob,
+                                               "rg":rg})

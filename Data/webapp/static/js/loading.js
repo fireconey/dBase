@@ -2,6 +2,7 @@ window.onload=function(){
 	initbody()
 	skip()
 	iput()
+	lossFocus()
 
 	
 }
@@ -67,6 +68,15 @@ function skip(){
 
 }
 
+function lossFocus(){
+	var ob=document.getElementsByTagName("input")
+	   ob[1].onfocus=function(){
+		     this.value=""
+	   }
+	   ob[2].onfocus=function(){
+			this.value=""
+	   }
+}
 
 
 

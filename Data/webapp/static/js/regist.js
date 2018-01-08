@@ -102,7 +102,7 @@ function changephoto() {
                 photo.style.width = photo.offsetHeight + "px"
             }
         }
-        xl.open("post", "rg", true)
+        xl.open("post", "regist", true)
         xl.send(data)
     }
 }
@@ -130,7 +130,7 @@ function submit(){
 
 
     yes.onclick = function () {
-        var linkloc=loc.children[0].value+"/"+loc.children[1].value+"/"+loc.children[2].value+group
+        var linkloc=loc.children[0].value+","+loc.children[1].value+","+loc.children[2].value+","+group
         var data = new FormData()
         data.append("usr",usr.value.replace(/\s+/g,""))
         data.append("passwd", passwd.value.replace(/\s+/g,""))
@@ -175,17 +175,18 @@ function submit(){
                     }
                 }
                 else{
+                    alert(222222)
 
                     window.location.href="/loading"
                 }
 
             }
         }
-        xl.open("post", "rg", true)
+        xl.open("post", "regist", true)
         xl.send(data)
     }
 
     cancel.onclick=function (){
-        window.location.href="loading"
+        window.location.href="index"
     }
 }

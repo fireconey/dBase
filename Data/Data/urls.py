@@ -24,13 +24,15 @@ urlpatterns = {
     url("loading", view.loading),
     url("topbar",view.topbar),
     url("userInfo",view.userInfo),
-    # url("goods",),
-    # url("goodsback",),
+    url("goods",view.goods),
+    url("info",view.info),
+    url("quite",view.quite),
     # url("e")
     # url("gs",view.goods),
     # url("gb", view.gb),
     # url("tim",view.tim),
     url("eval",view.eval),
+
     # url("reg",view.reg),
     # url("oop",view.load2),
 

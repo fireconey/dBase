@@ -72,6 +72,10 @@ body{
 	color:#FFF;
 }
 
+#topbar input[name="mark"]{
+	display: none;
+	background: red;
+}
 
 
 /************************以下是详细内容******/

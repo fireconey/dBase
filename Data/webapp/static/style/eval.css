@@ -70,6 +70,10 @@ background-color: rgba(211,211,211,0.5);
 	font-size: 17px;
 	color:#FFF;
 }
+#topbar input[name="mark"]{
+	display: none;
+	background: red;
+}
 
 /**********************88********/
 

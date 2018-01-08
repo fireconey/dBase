@@ -73,6 +73,10 @@ background-color: rgba(211,211,211,0.5);
 	font-size: 17px;
 	color:#FFF;
 }
+#topbar input[name="mark"]{
+	display: none;
+	background: red;
+}
 
 
 /************------内容开始-------**************/
@@ -86,8 +90,8 @@ background-color: rgba(211,211,211,0.5);
 	/*background-color: rgba(42,41,46,0.1);*/
 	padding-top:1%; 
 	box-shadow: 5px 5px 3px #8F8F8F;
-	/*border:0.5px solid black /*rgba(192,192,192,1)*/;*/
-	 border:1px solid red!important;
+	/*border:0.5px solid black /*rgba(192,192,192,1)*/
+	 /*border:1px solid red!important;*/
 
 }
 

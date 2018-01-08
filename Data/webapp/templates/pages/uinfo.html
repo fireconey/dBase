@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="refresh" content="2000">
+	<title>ldinfo</title>
+	<script src={%  static "js/uinfo.js" %}></script>
+	<link rel="stylesheet" href={%  static "style/uinfo.css" %}>
+</head>
+<body>
+	<div id="inner">
+		<header id="header">
+			<div id="ad"><img src={%  static "img/banner/timg.jpg"%}></div>
+			<form action="/topbar" method="post" id="topbar">
+               {% csrf_token %}
+                <img src="{{ img }}" alt="登陆的头像" id="headp">
+				<div id="name">姓名</div>
+				<ul id="list">
+					<li><a href="#">首页</a></li>
+					<li><a href="#">消息</a></li>
+					<li><a href="#">物品</a></li>
+					<li><a href="#">{{ob}}</a></li>
+					<li><a href="#">{{ rg }}</a></li>
+				</ul>
+                <input type="submit" name="mark" value="img">
+			</form>
+		</header>
+		<section id="content">
+			<div id="im"><img src={%  static "img/loading.jpg" %} alt="头像"></div>
+			<div id="ldinfoim">姓名</div>
+			<form action="userInfo" method="post" id="fo">
+				<label for="name2">账号:</label>
+				<input  type="text" name="usr" id="name2" value="{{ usr }}">
+				<label for="infosex">性别:</label>
+				<input type="text" name="sex" id="infosex" value="{{ sex }}">
+				<label for="birth">出生:</label>
+				<input type="text" name="birth" id="birth" value="{{ birth }}">
+				<label for="infopw">密码:</label>
+				<input type="text" name="passwd" id="infopw" value="{{ passwd }}">
+				<label for="email">联系:</label>
+                <input type="text" name="wx" id="email" value="{{ wx }}">
+                <label for="phone">电话:</label>
+                <input type="text" name="phone" id="phone" value="{{ phone }}">
+                <label for="loc">地址:</label>
+                <input type="text" name="loc" id="loc" value="{{ loc }}">
+
+                <input id="fosubmit" type="submit" value="修改" >
+			</form>
+		</section>
+		<footer id="footer">
+			<div>电话：13957613802</div>
+			<div>版权@13957613802</div>
+		</footer>
+	</div>
+
+
+	
+</body>
+</html>
