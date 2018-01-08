@@ -145,14 +145,20 @@ body{
 }
 
 #loc .loc{
-    margin:0;
-	width: 31.5%;
+    margin-left:0!important;
+	width: 23%;
     background: none;
 	height:100%; 
 	border-style: none;
-
 	color:yellow;
 	
+}
+#rit #group{
+	width: 24%;
+	height: 100%;
+	border: none;
+	border-left:1px  dashed  #FFF;
+
 }
 #rit #cancel{
 	width:100%;

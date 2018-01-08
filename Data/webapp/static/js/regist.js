@@ -124,11 +124,13 @@ function submit(){
     var wx = document.getElementById("wx");
     var phone = document.getElementById("phone");
     var loc=document.getElementById("loc")
+    var group=document.getElementById("group").value
     var yes=document.getElementById("yes")
     var cancel=document.getElementById("cancel")
 
+
     yes.onclick = function () {
-        var linkloc=loc.children[0].value+"/"+loc.children[1].value+"/"+loc.children[2].value
+        var linkloc=loc.children[0].value+"/"+loc.children[1].value+"/"+loc.children[2].value+group
         var data = new FormData()
         data.append("usr",usr.value.replace(/\s+/g,""))
         data.append("passwd", passwd.value.replace(/\s+/g,""))

@@ -17,18 +17,21 @@ from django.contrib import admin
 from django.conf.urls import url
 from webapp import views  as view
 
-urlpatterns = [
+urlpatterns = {
     url('admin/', admin.site.urls),
-    url("index",view.index),
-    url('rg',view.regist),
-    url("loading",view.loading),
-    # url("din",view.di),
-    # url("df",view.datainfo),
+    url("index", view.index),
+    url("regist", view.regist),
+    url("loading", view.loading),
+    url("topbar",view.topbar),
+    url("userInfo",view.userInfo),
+    # url("goods",),
+    # url("goodsback",),
+    # url("e")
     # url("gs",view.goods),
     # url("gb", view.gb),
     # url("tim",view.tim),
-    # url("eval",view.eval),
+    url("eval",view.eval),
     # url("reg",view.reg),
     # url("oop",view.load2),
 
-]
+}

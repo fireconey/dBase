@@ -9,7 +9,7 @@ import os
 import  threading
 # Create your views here.
 #登录检查标记
-
+flag=0
 def index(request):
     #user.objects.create(usr="th",passwd="123",sex="男",
      #                   birth="19890615",email="1132224184@qq.com")
@@ -18,6 +18,11 @@ def index(request):
 
 @csrf_exempt
 def  regist(request):
+    global  flag
+    print(flag)
+    if flag==1:
+        return HttpResponseRedirect("index")
+
     dic={}
     initphoto="../static/img/loading.jpg"
     if request.method=="POST":
@@ -70,7 +75,7 @@ def  regist(request):
 
 
 
-flag=0
+
 def  loading(request):
     global  flag
     t = True  #获取的密码是『请输入密码』的标记
@@ -90,7 +95,7 @@ def  loading(request):
         if obj.is_valid():
             data=obj.clean()
             flag=1
-            return  HttpResponseRedirect("index")
+            return  HttpResponseRedirect("/index")
         else:
             flag=0
             if pw!="请输入密码":
@@ -112,11 +117,30 @@ def  loading(request):
 
 
 
+def topbar(request):
+    global flag
+    if flag==1 and request.method=="POST":
+        data=request.POST
+        mark=data["mark"]
+        if mark=="img":
+            return  HttpResponseRedirect("userInfo")
+        elif mark=="quite":
+            flag=0
+            return  HttpResponseRedirect("/index")
+    else:
+        print(222)
+        return HttpResponseRedirect("/index")
 
 
 
 
-def di(request):
+
+
+
+
+
+
+def userInfo(request):
     return  render(request,"pages/ldinfo.html")
 
 def datainfo(request):

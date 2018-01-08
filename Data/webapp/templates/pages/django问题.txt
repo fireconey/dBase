@@ -1,6 +1,0 @@
-1、如果migrate报没有表格的错误，是由于原来做的migration文件中
-   原来的没有删除。
-2、python manage.py inspectdb能够查看数据库中的有哪些表格
-
-3、python manage.py inspectdb>app名称/   modeles能够把数据库中的数 
-   据映射到models中，后面要使用使用migration映射一次。
