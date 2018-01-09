@@ -6,12 +6,16 @@ from .forms import Loading as ldform
 from . import forms as form
 from django.views.decorators.csrf import csrf_exempt
 import os
+import  shutil
 import  threading
 # Create your views here.
 #登录检查标记
 flag=0
 utemp=0
+initimg="static/img/loading.jpg"
+initusr="姓名"
 def index(request):
+    global  initusr,initimg
     ob="登录"
     rg="注册"
     if flag==0:
@@ -21,13 +25,16 @@ def index(request):
         rg="已登录"
 
     return  render(request,"index.html",{"ob":ob,
-                                         "rg":rg})
+                                         "rg":rg,
+                                         "initusr":initusr,
+                                         "initimg":initimg
+
+                                         })
 
 
 @csrf_exempt
 def  regist(request):
     global  flag
-    print(flag)
     if flag==1:
         return HttpResponseRedirect("index")
 
@@ -40,7 +47,6 @@ def  regist(request):
         onlyu=form.Usr(usr)
         if umodle.is_valid() and usr["flag"]=="submit":
             data=umodle.clean()
-            print(umodle)
             initphoto=data["img"]
             model.WebappUsr(usr=data["usr"],
                             passwd=data["passwd"],
@@ -70,7 +76,6 @@ def  regist(request):
                 dic[i]=onlyu.errors.get(i)
             return  HttpResponse(str(dic))
         elif usr["flag"]=="cancel":
-            import shutil
             shutil.rmtree("webapp/static/" + usr["ucancel"])
             return HttpResponse("ok")
 
@@ -87,7 +92,7 @@ def  regist(request):
 
 
 def  loading(request):
-    global  flag,utemp
+    global  flag,utemp,initusr,initimg
     t = True  #获取的密码是『请输入密码』的标记
     if request.method=="POST":
         r = request.POST
@@ -97,7 +102,6 @@ def  loading(request):
         #处理好之后导入数据
         pw = r["passwd"].strip()
         u=r["usr"].strip()
-        print(pw)
         #导入数据到表单中便于验证
         obj=ldform(r)
 
@@ -105,7 +109,9 @@ def  loading(request):
         if obj.is_valid():
             data=obj.clean()
             flag=1
+            initimg=model.WebappUsr.objects.get(usr=u).img
             utemp=u
+            initusr=utemp
             return  HttpResponseRedirect("/index")
         else:
             flag=0
@@ -129,7 +135,6 @@ def  loading(request):
 
 def topbar(request):
     global flag
-    print(flag)
     if flag==1 and request.method=="POST":
         data=request.POST
         mark=data["mark"].strip()
@@ -157,14 +162,20 @@ def quite(request):
     flag=0
     return  HttpResponseRedirect("/index")
 
+"""
+1、从数据库中查询数据显示到页面
+2、修改数据点击提交修改数据库中的对应数据使用ajax
+
+"""
 
 
 
-
-
-
+@csrf_exempt
 def userInfo(request):
-    global  utemp
+
+    global  utemp,initimg,initusr
+    if flag==0:
+        return HttpResponseRedirect("loading")
     ob = "登录"
     rg = "注册"
     query=model.WebappUsr
@@ -176,26 +187,65 @@ def userInfo(request):
     phone=""
     loc=""
     img=""
+    # if flag==0:
+    #     return  HttpResponseRedirect("index")
     if flag == 1:
         ob = "退出"
         rg = "已登录"
     if request.method=="POST":
-        print("yuyuy"+utemp)
         data=request.POST
-        query(usr=data["usr"],
-              sex=data["sex"],
-              birth=data["birth"],
-              passwd=data["passwd"],
-              wx=data["wx"],
-              phone=data["phone"],
-              loc=data["loc"])
-        query.save()
-        utemp=data["usr"]
+        try:
+            file = request.FILES["file"]
+        except:
+            print("没有文件上传")
+        if data["flag"]=="up":
+            ob = model.WebappUsr.objects.get(usr=utemp)
+            ob.img = "static/"+data["usr"]+"/"+file.name
+            initimg = "static/"+data["usr"]+"/"+file.name
+            ob.save()
+
+            try:
+                shutil.rmtree("webapp/static/"+data["usr"])
+            except:
+                print("没有这个目录")
+            if not os.path.exists("webapp/static/"+data["usr"]):
+                os.mkdir("webapp/static/"+data["usr"])
+            with open("webapp/static/"+data["usr"]+"/"+file.name,"wb+") as f:
+                for i in file:
+                    f.write(i)
+            return  HttpResponse("../static/"+data["usr"]+"/"+file.name)
+
+        if  data["flag"]=="change":
+            ob = model.WebappUsr.objects.get(usr=utemp)
+            uform = form.uinfo(data)
+            if uform.is_valid():
+                ob.usr=data["usr"]
+                ob.sex=data["sex"]
+                ob.birth=data["birth"]
+                ob.passwd=data["passwd"]
+                ob.wx=data["wx"]
+                ob.phone=data["phone"]
+                ob.loc=data["loc"]
+                initusr=ob.usr
+                initimg=ob.img
+                try:
+                    shutil.move("webapp/static/"+utemp,"webapp/static/"+data["usr"])
+                except:
+                    print("第一次没有创建文件的所以不能更名")
+                utemp = data["usr"]
+                ob.save()
+                utemp = data["usr"]
+                return HttpResponse("temp")
+            else:
+                er={}
+                for i in uform.errors:
+                    er[i]=uform.errors[i]
+                return  HttpResponse(str(er))
+
 
     try:
         query = query.objects.get(usr=utemp)
         usr = query.usr
-        print(query.usr + "11")
         sex = query.sex
         if int(sex)==0:
             sex="男"
@@ -207,6 +257,8 @@ def userInfo(request):
         phone = query.phone
         loc = query.loc
         img=query.img
+
+        utemp = usr
     except:
         print("查询有错误")
     return  render(request,"pages/uinfo.html",

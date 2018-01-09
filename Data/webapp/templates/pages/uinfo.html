@@ -15,7 +15,7 @@
 			<form action="/topbar" method="post" id="topbar">
                {% csrf_token %}
                 <img src="{{ img }}" alt="登陆的头像" id="headp">
-				<div id="name">姓名</div>
+				<div id="name">{{usr }}</div>
 				<ul id="list">
 					<li><a href="#">首页</a></li>
 					<li><a href="#">消息</a></li>
@@ -27,26 +27,35 @@
 			</form>
 		</header>
 		<section id="content">
-			<div id="im"><img src={%  static "img/loading.jpg" %} alt="头像"></div>
-			<div id="ldinfoim">姓名</div>
-			<form action="userInfo" method="post" id="fo">
+
+
+            <div id="im" >
+                {% csrf_token %}
+                <input type="file" name="file"  id="file">
+                <img src={{ img }} alt="头像" id="photo">
+                <input type="submit" value="修改" name="修改" id="submit">
+            </div>
+			<div id="ldinfoim">{{ usr}}</div>
+			<div  method="post" id="fo">
+                {% csrf_token %}
+                <div>
 				<label for="name2">账号:</label>
-				<input  type="text" name="usr" id="name2" value="{{ usr }}">
+				<input  type="text" name="usr" id="usr" value="{{ usr }}">
 				<label for="infosex">性别:</label>
-				<input type="text" name="sex" id="infosex" value="{{ sex }}">
+				<input type="text" name="sex" id="sex" value="{{ sex }}">
 				<label for="birth">出生:</label>
 				<input type="text" name="birth" id="birth" value="{{ birth }}">
 				<label for="infopw">密码:</label>
-				<input type="text" name="passwd" id="infopw" value="{{ passwd }}">
-				<label for="email">联系:</label>
-                <input type="text" name="wx" id="email" value="{{ wx }}">
+				<input type="text" name="passwd" id="passwd" value="{{ passwd }}">
+				<label for="wx">联系:</label>
+                <input type="text" name="wx" id="wx" value="{{ wx }}">
                 <label for="phone">电话:</label>
                 <input type="text" name="phone" id="phone" value="{{ phone }}">
                 <label for="loc">地址:</label>
                 <input type="text" name="loc" id="loc" value="{{ loc }}">
-
-                <input id="fosubmit" type="submit" value="修改" >
-			</form>
+               </div>
+                <input id="fosubmit" type="button" value="修改" >
+			</div>
 		</section>
 		<footer id="footer">
 			<div>电话：13957613802</div>

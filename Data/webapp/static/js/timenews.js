@@ -19,6 +19,8 @@ function initbody()
 	var w=ob.offsetWidth
 	    ob.style.height=w/0.8752+"px"
 	    // alert(ob.offsetHeight)
+	     var headp=document.getElementById("headp")
+	    headp.style.width=headp.offsetHeight+"px"
 }
 
 function img(){

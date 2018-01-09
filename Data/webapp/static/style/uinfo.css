@@ -97,14 +97,30 @@ background-color: rgba(211,211,211,0.5);
 
 
 #content #im{
-	width:10%;
-	margin:auto;	
+	width:10%;  
+	margin:auto;
+	border-radius:50% 
+	/*background: yellow;*/
+}
+#im #file{
+	display: none;
 }
 
 #im img{
 	width:100%;
+	height:100%; 
 	border-radius:50%;
 
+}
+
+#im #submit{
+	display: block;
+	display:none;
+	background:red;
+	color: #FFF;
+	width:100%;
+	height:100%; 
+	border-radius:50%;
 }
 #ldinfoim{
 	width:10%;
@@ -132,7 +148,7 @@ background-color: rgba(211,211,211,0.5);
 	font-size:1.1em;
 	color:green;
 }
-#content  #fo input{
+ #fo div input{
 	margin-top:4%;
 	height:8%;
 	width:80%; 
@@ -145,14 +161,14 @@ background-color: rgba(211,211,211,0.5);
 #content #fosubmit{
 	 background:green; 
 	 color:#FFF!important;
-	 /*display: block;*/
+	 display: block;
 	 float:right;
 	 width:30%!important; 
 	 margin-right:30%;
 	 border-radius:7px; 
 	 height:10%; 
 	 margin-top:15%!important;
-}
+  } 
 
 #footer{
     margin-top: 1%;
@@ -161,6 +177,6 @@ background-color: rgba(211,211,211,0.5);
 	width:100%;
 	color:#FFF;
 	background:green!important;
-	/*border:1px solid rgba(192,192,192,1);*/
+	/*border:1px solid rgba(192,192,192,1);
 	box-shadow: 5px 5px 3px #8F8F8F;
 }

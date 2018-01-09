@@ -15,6 +15,9 @@ function initbody(){
 	var ob=document.getElementById("inner")
 	var w=ob.offsetWidth
 	    ob.style.height=w/0.957+"px"
+	     var headp=document.getElementById("headp")
+	    headp.style.width=headp.offsetHeight+"px"
+	   
 }
 
 
