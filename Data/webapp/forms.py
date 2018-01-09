@@ -2,31 +2,34 @@ from django import forms
 from webapp.models import WebappUsr as umodel
 from django.forms import ValidationError
 
-
+flag=0
 def usrValidate(value):
-    data_usr=0
+    global  flag
     try:
-        data_usr=umodel.objects.get(usr=value)
+        flag=umodel.objects.get(usr=value)
     except:
-        data_usr=0
-    if data_usr==0:
+        flag=0
+    if flag==0:
         raise ValidationError("用户名错误")
+
 def noUsrValidate(value):
-    data_usr=0
+    global  flag
     try:
-        data_usr=umodel.objects.get(usr=value)
+        flag=umodel.objects.get(usr=value)
     except:
-        data_usr=0
-    if data_usr!=0:
+        flag=0
+    if flag!=0:
         raise ValidationError("已有此用户")
 
 def passwdValidate(value):
-    data_passwd=0
-    try:
-        data_passwd=umodel.objects.get(passwd=value)
-    except:
-        data_passwd=0
-    if data_passwd==0:
+    global  flag
+
+    if flag!=0:
+        print(value+"hhhhh")
+        flag=flag.passwd
+        print(flag+"5555")
+    print(flag,"22999",value)
+    if  flag!=value:
         raise  ValidationError("密码错误")
 
 flag=0
@@ -52,6 +55,7 @@ class Loading(forms.Form):
 
 
 class Regist(forms.Form):
+    img=forms.CharField(max_length=100)
     usr=forms.CharField(max_length=10,
                           validators=[noUsrValidate],
                           error_messages={"required": "不能为空"})

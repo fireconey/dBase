@@ -40,10 +40,8 @@ def  regist(request):
         onlyu=form.Usr(usr)
         if umodle.is_valid() and usr["flag"]=="submit":
             data=umodle.clean()
-            try:
-                initphoto="../static/img/"+file["file"].name
-            except:
-                initphoto="../static/img/loading.jpg"
+            print(umodle)
+            initphoto=data["img"]
             model.WebappUsr(usr=data["usr"],
                             passwd=data["passwd"],
                             sex=data["sex"],
@@ -53,6 +51,7 @@ def  regist(request):
                             loc=data["loc"],
                             img=initphoto
                             ).save()
+
             return  HttpResponse("temp")
         elif usr["flag"]=="submit":
             for i in umodle.errors:
@@ -60,17 +59,21 @@ def  regist(request):
             return HttpResponse(str(dic))
 
         if onlyu.is_valid() and usr["flag"]=="im":
-            print(22)
             if not os.path.exists("webapp/static/"+usr["usr"]):
                 os.mkdir("webapp/static/"+usr["usr"])
             with open("webapp/static/"+usr["usr"]+"/"+file["file"].name,"wb+") as f:
                 for i in file["file"]:
                     f.write(i)
             return HttpResponse("static/"+usr["usr"]+"/"+file["file"].name)
-        else:
+        elif usr["flag"]=="im":
             for i in onlyu.errors:
                 dic[i]=onlyu.errors.get(i)
             return  HttpResponse(str(dic))
+        elif usr["flag"]=="cancel":
+            import shutil
+            shutil.rmtree("webapp/static/" + usr["ucancel"])
+            return HttpResponse("ok")
+
     else:
         obj=form.Regist()
         return  render(request,"pages/regist.html",{"im":initphoto,
@@ -94,9 +97,9 @@ def  loading(request):
         #处理好之后导入数据
         pw = r["passwd"].strip()
         u=r["usr"].strip()
-
+        print(pw)
         #导入数据到表单中便于验证
-        obj=ldform(request.POST)
+        obj=ldform(r)
 
         #验证通过就到首页
         if obj.is_valid():

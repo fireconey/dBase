@@ -53,11 +53,8 @@ function changephoto() {
             return "null"
         }
 
-
-
         var ob = document.getElementById("file")
         var v = ob.files[0]
-        var linkloc=loc.children[0].value+"/"+loc.children[1].value+"/"+loc.children[2].value
         var data = new FormData()
         data.append("file", v)
         data.append("usr",usr.value.replace(/\s+/g,""))
@@ -115,7 +112,7 @@ function loadLocal(){
 
 
 function submit(){
-    var change = document.getElementById("changephoto")
+    var img= document.getElementById("photo")
     var usr=document.getElementById("usr")
     var passwd=document.getElementById("passwd")
     var passwd2=document.getElementById("passwd2")
@@ -124,14 +121,20 @@ function submit(){
     var wx = document.getElementById("wx");
     var phone = document.getElementById("phone");
     var loc=document.getElementById("loc")
-    var group=document.getElementById("group").value
+    var group=document.getElementById("group")
     var yes=document.getElementById("yes")
     var cancel=document.getElementById("cancel")
 
-
+     if (window.XMLHttpRequest) {
+            xl = new XMLHttpRequest()
+        }
+        else {
+            xl = new ActiveXObject("Microsoft.XMLHTTP")
+        }
     yes.onclick = function () {
-        var linkloc=loc.children[0].value+","+loc.children[1].value+","+loc.children[2].value+","+group
+        var linkloc=loc.children[0].value+","+loc.children[1].value+","+loc.children[2].value+","+group.value
         var data = new FormData()
+        img=img.attributes["src"].value
         data.append("usr",usr.value.replace(/\s+/g,""))
         data.append("passwd", passwd.value.replace(/\s+/g,""))
         data.append("passwd2", passwd2.value.replace(/\s+/g,""));
@@ -140,13 +143,9 @@ function submit(){
         data.append("wx",wx.value.replace(/\s+/g,""))
         data.append("phone",phone.value.replace(/\s+/g,""))
         data.append("loc",linkloc.replace(/\s+/g,""))
+        data.append("img",img.replace(/\s+/g,""))
         data.append("flag","submit")
-        if (window.XMLHttpRequest) {
-            xl = new XMLHttpRequest()
-        }
-        else {
-            xl = new ActiveXObject("Microsoft.XMLHTTP")
-        }
+
 
         xl.onreadystatechange = function () {
             if (xl.readyState == 4 & xl.status == 200) {
@@ -162,6 +161,8 @@ function submit(){
                 {
                     for(var i in h) 
                     {
+                        if (h[i]=="img")
+                        {continue}
                         var ob = document.getElementById(i)
                         ob.value = h[i]
                         ob.style.color = "red"
@@ -175,7 +176,6 @@ function submit(){
                     }
                 }
                 else{
-                    alert(222222)
 
                     window.location.href="/loading"
                 }
@@ -187,6 +187,18 @@ function submit(){
     }
 
     cancel.onclick=function (){
+        usr=usr.value.replace(/\s+/g,"")
+        if (usr=="已有此用户" | usr=="" | usr=="不能为空")
+        {
+            window.location.href="index"
+            return "temp"
+        }
+        var data=new FormData()
+        data.append("flag","cancel")
+        data.append("ucancel",usr)
+        xl.open("post","regist",true)
+        xl.send(data)
         window.location.href="index"
+
     }
 }
