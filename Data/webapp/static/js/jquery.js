@@ -253,6 +253,23 @@ function chajian()
 
 
 
+    	/*****************导入js文件*****************/
+	/*
+	append是在选定元素的子元素后面追加
+	innerHTML导入的js代码不能执行要使用
+    createElement
+    使用：$().include("XXX.js")
+    */
+    this.link=function(value)
+    {
+    	var el=document.createElement("link")
+    	    el.href=value
+    	    el.rel="stylesheet"
+    	var head=document.getElementsByTagName("head")[0]
+    	    head.appendChild(el)
+    }
+
+
 
 
     /*****************颜色设置函数*****************/
@@ -1047,7 +1064,7 @@ function chajian()
 
 	this.ajax=function(value)
 	{
-		ar xl = 0
+		var xl = 0
       var type = value["type"]
       var url = value["url"]
       var data = new FormData(value["usr"])

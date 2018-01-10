@@ -331,3 +331,7 @@ def goods(request):
         rg = "已登录"
     return  render(request,"pages/goods.html",{"ob":ob,
                                                "rg":rg})
+
+
+def infodetail(request):
+    return render(request,"pages/infodetail.html")

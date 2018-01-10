@@ -1,16 +1,12 @@
-
 {% load static %}
-<scrip type="text/javascript" src={% static "js/head.js"%}>
-</scrip>
+<script type="text/javascript" src={% static "js/head.js"%}>
+</script>
 <link rel="stylesheet" href={%static "style/head.css"%}>
-
-
 <header id="header">
       <div id="ad">
           <img src={% static "/img/banner/timg.jpg"%}>
       </div>
       <form action="/topbar"  method="post" id="topbar">
-
               {% csrf_token %}
               <img src={% static "img/loading.jpg"%} alt="登陆的头像" id="headp">
             <div id="name">姓名</div>
@@ -23,8 +19,7 @@
             </ul>
           <input type="submit" name="mark" value="img">
           </form>
-    </header>
-{% block context%}
-cddc
+</header>
 
-{% endblock context%}
+
+

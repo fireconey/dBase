@@ -1,0 +1,96 @@
+.box{
+	display: block; 
+	width: 100%;
+	height:33%;
+	background: green; 
+	margin-bottom:1%; 
+	border:1px solid #ccc;
+	box-shadow: 5px 5px 3px #8F8F8F; 
+
+}
+.box a{
+	display: block;
+	background:green;
+	text-decoration: none;
+	width:100%;
+	height:5%;  
+	padding-top:0.5%; 
+	font-size: 1.2em;
+	color:#FFF;
+}
+.lab{
+	background:#FFF;
+	height:4%;
+	width:100%;
+	text-align:center;
+	border-bottom: 1px solid green;
+
+
+}
+
+.data{
+	/*background: blue;*/
+	height: 43.5%;
+	width:100%; 
+	list-style: none;
+
+
+
+}
+
+.data .left{
+	width:33%;
+	height:100%;
+	float:left;
+	list-style: none;
+	/*background: red; */
+}
+
+.data .middle{
+   /*clear: both;*/
+	width:33%;
+	height: 100%;
+	margin:auto;
+	list-style: none;
+	/*margin-left:1%; */
+	/*background: red */
+}
+
+.data .right{
+	width: 33%;
+	height:100%;
+	float:right;
+	list-style: none;
+	/*background: red; */
+	position: relative;
+}
+
+
+.data .li{
+	position: relative;
+	background: red;
+	height:50px; 
+}
+.li img{
+	float:left;
+	/*display: block;*/
+	 
+	height:50px;
+	width:50px;
+	background: red;
+	
+	border-radius:50%;  
+	
+}
+
+
+
+.li .name{
+	position: absolute;
+	top:50%;
+	left:8px;
+	color:red;
+
+}
+
+

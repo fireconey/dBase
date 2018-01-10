@@ -1,11 +1,6 @@
-window.onload=function(){
+function  head(){
 	img();
 	topbar();
-
-
-}
-window.onresize=function(){
-
 }
 
 
@@ -16,7 +11,6 @@ function img(){
 		ob.value="img";
 		ob.click();
 	}
-
 }
 
 

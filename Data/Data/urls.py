@@ -33,6 +33,7 @@ urlpatterns = {
     # url("tim",view.tim),
     url("eval",view.eval),
     url(r"^$",view.index),
+    url("detail",view.infodetail),
 
     # url("reg",view.reg),
     # url("oop",view.load2),
