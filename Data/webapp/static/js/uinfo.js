@@ -14,10 +14,12 @@ function initbody(){
 	var im=document.getElementById("im")
 	var fosubmit=document.getElementById("fosubmit")
 	var w=ob.offsetWidth
-	    ob.style.height=w/0.957+"px"
+	    ob.style.height=w/0.79588+"px"
+	    
 	var submit=document.getElementById("submit")
 	    im.style.height=im.offsetWidth+"px"
-	    var headp=document.getElementById("headp")
+
+	var headp=document.getElementById("headp")
 	    headp.style.width=headp.offsetHeight+"px"
 	fosubmit.onmousedown=function(){
 

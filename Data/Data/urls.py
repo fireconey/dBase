@@ -34,6 +34,7 @@ urlpatterns = {
     url("eval",view.eval),
     url(r"^$",view.index),
     url("detail",view.infodetail),
+    url("t",view.t)
 
     # url("reg",view.reg),
     # url("oop",view.load2),

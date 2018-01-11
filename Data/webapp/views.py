@@ -20,6 +20,8 @@ def index(request):
     rg="注册"
     if flag==0:
         ob="登录"
+        initimg = "static/img/loading.jpg"
+        initusr = "姓名"
     if flag==1:
         ob="退出"
         rg="已登录"
@@ -27,7 +29,8 @@ def index(request):
     return  render(request,"index.html",{"ob":ob,
                                          "rg":rg,
                                          "initusr":initusr,
-                                         "initimg":initimg
+                                         "initimg":initimg,
+                                          "range":range(1,6),
 
                                          })
 
@@ -335,3 +338,6 @@ def goods(request):
 
 def infodetail(request):
     return render(request,"pages/infodetail.html")
+
+def t(request):
+    return  render(request,"pages/timenews.html")

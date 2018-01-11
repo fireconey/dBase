@@ -13,15 +13,19 @@ window.onresize=function(){
 function initbody(){
 	var ob=document.getElementById("inner")
 	var w=ob.offsetWidth
+
 	var header=document.getElementById("header")
-	var  content=document.getElementById("content")
-	var footer=document.getElementById("footer")
-	// alert(content.offsetHeight)
-	    header.style.height=w/4.096+"px"
-	    content.style.height=w/2.275+"px"
-	    footer.style.height=w/5.12+"px"
-	 var headp=document.getElementById("headp")
+		header.style.height=w/3.4+"px"
+
+	var headp=document.getElementById("headp")
 	    headp.style.width=headp.offsetHeight+"px"
+	
+	var content=document.getElementById("content")
+		content.style.height=w/1.7+"px"
+	
+	var footer=document.getElementById("footer")
+	    footer.style.height=w/4.25%+"px"
+
 
 }
 

@@ -12,7 +12,8 @@ body{
 }
 #inner{
 	margin:auto;
-	width:80%;
+	width: 80%;
+	/*background: red;*/
 	min-width:850px;
 }
 #header{
@@ -82,15 +83,17 @@ body{
 
 #content{
 	 border:0.5px solid #ccc;
-	background:#FFF;
-	width:100%;
-	box-shadow: 5px 5px 3px #8F8F8F;
+	 background:#FFF;
+	 width:100%;
+	 box-shadow: 5px 5px 3px #8F8F8F;
+	 height:500px; 
+	 margin-top:30px 
 
 }
 
 #content #sell{
 	width:100%;
-	height:30%;
+	height:20%;
 
 
 }
@@ -98,7 +101,7 @@ body{
 
 #sell #title{
   
-	height:35%; 
+	height:45%; 
 	text-align: center;
 	font-size:1.3em; 
 	padding-top:1%; 
@@ -110,7 +113,7 @@ body{
 
 #sell #usrinfo{
 	background:green;
-	height:65%; 
+	height:55%; 
 
 }
 #usrinfo #img{
@@ -173,14 +176,14 @@ body{
 
 #content #buy{
 	width: 100%;
-	height: 70%;
+	height: 80%;
 
 }
 #buy #title{
 	height:15%;
 	text-align: center;
 	font-size: 1.3em;
-	padding-top:1%; 
+	padding-top:3%; 
      
     /*background:rgba(0,0,0,0.1);*/
     /*color:yellow;*/
@@ -202,19 +205,19 @@ body{
 }
 
 #explain{
-	margin-top:1%; 
+	border-top: 1.5px dashed green;
 	width:100%;
 	min-height:60px;  
 	background: #FFF;
 	box-shadow: 5px 5px 3px #8F8F8F;  
-	border:0.5px solid #ccc;
-}
+	}
 
 #footer{
 	color:#FFF;
 	clear:both;
-	margin-top:1%; 
+	margin-top:20px; 
 	width:100%;
+	height:200px; 
 	background:green;
 	box-shadow: 5px 5px 3px #8F8F8F;
 }
