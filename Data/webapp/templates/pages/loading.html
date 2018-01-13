@@ -3,14 +3,14 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="refresh" content="2000">
+{#	<meta http-equiv="refresh" content="2000">#}
 	<title>loading</title>
 	<script type='text/javascript'  src={% static "js/loading.js"%}></script>
 	<link rel="stylesheet" href={% static "style/loading.css"%}>
 </head>
 <body>
 	<div id="inner">
-		<form id="fom" action="/loading/"  method="post" novalidate>
+		<form id="fom" action="/loading"  method="post" novalidate>
 			{% csrf_token %}
 			<label for="user">
         账号：<input type="text" id="user" value="{{u}}" name="usr">

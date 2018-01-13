@@ -14,6 +14,8 @@ flag=0
 utemp=0
 initimg="static/img/loading.jpg"
 initusr="姓名"
+iniloc="地关村"
+@csrf_exempt
 def index(request):
     global  initusr,initimg
     ob="登录"
@@ -25,6 +27,16 @@ def index(request):
     if flag==1:
         ob="退出"
         rg="已登录"
+
+    if request.method=="POST":
+        rq=request.POST
+        return  HttpResponse(22)
+
+    m=model.WebappNews
+    ve=m.objects.get(flag="0")
+    print(ve.id)
+
+
 
     return  render(request,"index.html",{"ob":ob,
                                          "rg":rg,
@@ -88,12 +100,6 @@ def  regist(request):
                                                     "obj":obj})
 
 
-
-
-
-
-
-
 def  loading(request):
     global  flag,utemp,initusr,initimg
     t = True  #获取的密码是『请输入密码』的标记
@@ -135,7 +141,6 @@ def  loading(request):
                  "pw":"请输入密码"})
 
 
-
 def topbar(request):
     global flag
     if flag==1 and request.method=="POST":
@@ -154,8 +159,6 @@ def topbar(request):
         if mark=="img":
             return HttpResponseRedirect("index")
         return  HttpResponseRedirect(mark)
-
-
         # return  HttpResponseRedirect("index")
     else:
         return HttpResponseRedirect("/index")
@@ -341,3 +344,44 @@ def infodetail(request):
 
 def t(request):
     return  render(request,"pages/timenews.html")
+
+def newsList(request):
+    global initusr, initimg
+    ob = "登录"
+    rg = "注册"
+    if flag == 0:
+        ob = "登录"
+        initimg = "../static/img/loading.jpg"
+        initusr = "姓名"
+    if flag == 1:
+        ob = "退出"
+        rg = "已登录"
+    return render(request,"pages/newslist.html",
+                  {"range":range(1,21),
+                   "ob":ob,
+                   "rg":rg,
+                   "initusr":initusr,
+                   "initimg":initimg,
+                   })
+
+def head(request):
+    return  render(request,"model/head.html")
+
+def goodsDetail(request):
+    global initusr, initimg
+    ob = "登录"
+    rg = "注册"
+    if flag == 0:
+        ob = "登录"
+        initimg = "../static/img/loading.jpg"
+        initusr = "姓名"
+    if flag == 1:
+        ob = "退出"
+        rg = "已登录"
+    return  render(request,"pages/goodsdetail.html",
+                   {"range":range(1,21),
+                   "ob":ob,
+                    "rg":rg,
+                    "initimg":initimg,
+                    "initusr":initusr
+                    })

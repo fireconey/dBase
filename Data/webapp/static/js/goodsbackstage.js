@@ -36,7 +36,7 @@ function topbar() {
 	var ul=document.getElementById("list");
 	var mark=document.getElementsByName("mark")[0]
     var ch=ul.children
-	var index=["index","info","goods","loading","regist"]
+	var index=["index","newList","goodsDetail","loading","regist"]
 	ob0=ch[0]
 	ob1=ch[1]
 	ob2=ch[2]

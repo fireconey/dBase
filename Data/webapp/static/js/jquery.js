@@ -244,16 +244,20 @@ function chajian()
     */
     this.include = function(x) 
     {
-    	var body = document.getElementsByTagName("html")[0];
-    	var content = document.createElement("srcipt");
-
-    	content.setAttribute("src", x)
-    	body.append(content)
+    	var ob=document.getElementsByTagName("head")[0]
+    	var chi=document.getElementsByTagName("title")[0]
+    	var content = document.createElement("script");
+            content.type="text/javascript"
+            content.setAttribute("type","text/javascript")
+            content.setAttribute("src",x)
+            ob.append(content)
+            ob.insertBefore(content,chi)
+    	
     }
 
 
 
-    	/*****************导入js文件*****************/
+    	/*****************导入css文件*****************/
 	/*
 	append是在选定元素的子元素后面追加
 	innerHTML导入的js代码不能执行要使用
@@ -1069,6 +1073,7 @@ function chajian()
       var url = value["url"]
       var data = new FormData(value["usr"])
       var fn = value["fn"]
+      var wbzhi=0
       if (window.XMLHttpRequest) {
           xl = new XMLHttpRequest()
       }
@@ -1080,8 +1085,10 @@ function chajian()
       xl.onreadystatechange = function () {
           if (xl.readyState == 4 & xl.status == 200) {
               fn(xl)
+              
           }
       }
+     
 	}
 
 }

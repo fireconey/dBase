@@ -11,17 +11,17 @@ window.onresize=function(){
 
 function initbody(){
 	var ob=document.getElementById('inner')
-	var im=document.getElementById("im")
-	var fosubmit=document.getElementById("fosubmit")
 	var w=ob.offsetWidth
 	    ob.style.height=w/0.79588+"px"
-	    
-	var submit=document.getElementById("submit")
+
+	var im=document.getElementById("im")
 	    im.style.height=im.offsetWidth+"px"
 
 	var headp=document.getElementById("headp")
 	    headp.style.width=headp.offsetHeight+"px"
-	fosubmit.onmousedown=function(){
+
+	var fosubmit=document.getElementById("fosubmit")
+		fosubmit.onmousedown=function(){
 
         	fosubmit.style.color="red"
 
@@ -53,7 +53,7 @@ function topbar() {
 	var ul=document.getElementById("list");
 	var mark=document.getElementsByName("mark")[0]
     var ch=ul.children
-	var index=["index","info","goods","loading","regist"]
+	var index=["index","newsList","goodsDetail","loading","regist"]
 	ob0=ch[0]
 	ob1=ch[1]
 	ob2=ch[2]

@@ -1,12 +1,12 @@
 function  head(){
 	img();
 	topbar();
+
 }
-
-
 function img(){
 	var ob=document.getElementsByName("mark")[0];
 	var img=document.getElementById("headp");
+	    // img.style.width=img.offsetHeight+"px"
 	img.onclick=function(){
 		ob.value="img";
 		ob.click();
@@ -18,7 +18,7 @@ function topbar() {
 	var ul=document.getElementById("list");
 	var mark=document.getElementsByName("mark")[0]
     var ch=ul.children
-	var index=["index","info","goods","loading","regist"]
+	var index=["index","newsList","goodsDetail","loading","regist"]
 	ob0=ch[0]
 	ob1=ch[1]
 	ob2=ch[2]
