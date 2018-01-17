@@ -35,7 +35,8 @@ body{
 	height: 4%;
 	width:32%;  
 	background: green;
-	margin-bottom:1.78%;  
+	margin-bottom:1.78%;
+	position: relative;
 }
 #inner .right{
 	float:right;
@@ -43,6 +44,7 @@ body{
 	width: 32%;
 	margin-bottom:1.78%; 
 	background: green;
+	position: relative;
 }
 #inner .middle{
 	margin:auto;
@@ -50,15 +52,29 @@ body{
 	background: green;
 	width: 32%;
 	height:4%;
-	  
+	position: relative;
 	
 }
+
 #inner .headimg{
-	width:60px;
+	height:100%;
 	border-radius: 50%; 
+}
+.name{
+	position: absolute;
+	width: 13%;
+	top:59%;
+	left:5%;
+    text-align:center;
+	overflow:hidden;
+	color:blue;
 }
 #inner .data{
 	float:right;
+	width:77%;
+	height:100%;
+	overflow:hidden;
+	/*background: red;*/
 }
 
 
@@ -84,6 +100,7 @@ body{
 	height:85%; 
 	width:20%; 
 	text-align:center;
+	cursor:pointer;
 	 
 }
 #button #number{
@@ -123,6 +140,7 @@ body{
 	border: none;
     /*border:1px dashed black; */
     background:green;
+	cursor:pointer;
 }
 
 #button #next{
@@ -132,6 +150,7 @@ body{
 	background:#CCC;
 	color:blue;
 	text-align: center;
+	cursor:pointer;
 }
 
 

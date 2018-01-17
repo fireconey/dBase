@@ -7,9 +7,12 @@ from . import forms as form
 from django.views.decorators.csrf import csrf_exempt
 import os
 import  shutil
-import  threading
+import  webapp.tool as tool
+
 # Create your views here.
 #登录检查标记
+
+'''以下为已经开发好了的'''
 flag=0
 utemp=0
 initimg="static/img/loading.jpg"
@@ -30,14 +33,16 @@ def index(request):
 
     if request.method=="POST":
         rq=request.POST
-        return  HttpResponse(22)
-
-    m=model.WebappNews
-    ve=m.objects.get(flag="0")
-    print(ve.id)
-
-
-
+        newsmodel= model.WebappNews
+        shoppingmodel=model.WebappShoping
+        # obj= newsmodel.objects
+        tool.query(newsmodel,0,15,0)
+        tool.query(newsmodel,0,15,1)
+        tool.query(newsmodel,0,15,2)
+        tool.query(shoppingmodel,0,15,0)
+        tool.query(shoppingmodel,0,15,1)
+        ty=tool.query(shoppingmodel,0,15,2)
+        return HttpResponse(str(ty.get()))
     return  render(request,"index.html",{"ob":ob,
                                          "rg":rg,
                                          "initusr":initusr,
@@ -174,8 +179,6 @@ def quite(request):
 
 """
 
-
-
 @csrf_exempt
 def userInfo(request):
 
@@ -282,6 +285,13 @@ def userInfo(request):
 
 
 
+'''一下为有待替换的处理函数'''
+
+
+
+
+
+
 def goodsBackstage(request):
     ob="登录"
     rg = "注册"
@@ -342,13 +352,22 @@ def goods(request):
 def infodetail(request):
     return render(request,"pages/infodetail.html")
 
-def t(request):
-    return  render(request,"pages/timenews.html")
 
+
+fl=0
+@csrf_exempt
 def newsList(request):
-    global initusr, initimg
+    global initusr, initimg,fl
     ob = "登录"
     rg = "注册"
+    try:
+        all=model.WebappNews.objects.all().count()
+        if all%60!=0:
+            all=int(all/60)+1
+
+    except:
+        all=0
+
     if flag == 0:
         ob = "登录"
         initimg = "../static/img/loading.jpg"
@@ -356,21 +375,45 @@ def newsList(request):
     if flag == 1:
         ob = "退出"
         rg = "已登录"
+    if request.method=="POST":
+        try:
+            fl=int(request.POST["flag"])
+            return  HttpResponse("newsList")
+        except:
+            pass
+
+        count=int(request.POST["count"])-1
+
+        newsmodel=model.WebappNews
+
+
+        ty=tool.query(newsmodel,60*count,60*(1+count),fl)
+
+        return  HttpResponse(str(ty.get()))
     return render(request,"pages/newslist.html",
                   {"range":range(1,21),
                    "ob":ob,
                    "rg":rg,
                    "initusr":initusr,
                    "initimg":initimg,
+                   "all":all
                    })
 
-def head(request):
-    return  render(request,"model/head.html")
 
-def goodsDetail(request):
-    global initusr, initimg
+fl2=0
+@csrf_exempt
+def goodsList(request):
+    global initusr, initimg, fl2
     ob = "登录"
     rg = "注册"
+    try:
+        all = model.WebappShoping.objects.all().count()
+        if all % 80 != 0:
+            all = int(all/80) + 1
+
+    except:
+        all = 0
+
     if flag == 0:
         ob = "登录"
         initimg = "../static/img/loading.jpg"
@@ -378,10 +421,31 @@ def goodsDetail(request):
     if flag == 1:
         ob = "退出"
         rg = "已登录"
-    return  render(request,"pages/goodsdetail.html",
-                   {"range":range(1,21),
-                   "ob":ob,
-                    "rg":rg,
-                    "initimg":initimg,
-                    "initusr":initusr
-                    })
+    if request.method=="POST":
+        print(222222)
+        try:
+            fl2 = int(request.POST["flag"])
+            return HttpResponse("goodsList")
+        except:
+            pass
+        print(99999999)
+        count = int(request.POST["count"]) - 1
+
+        shoppingmodel =model.WebappShoping
+
+        ty = tool.querygoods(shoppingmodel, 80 * count, 80 * (1 + count), fl2)
+        hu=str(ty.get())
+
+        return HttpResponse(hu)
+    return render(request, "pages/goodsList.html",
+                  {"range": range(1, 21),
+                   "ob": ob,
+                   "rg": rg,
+                   "initusr": initusr,
+                   "initimg": initimg,
+                   "all": all
+                   })
+
+
+def head(request):
+    return  render(request,"model/head.html")

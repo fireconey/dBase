@@ -4,8 +4,9 @@
 <head>
 	<meta charset="UTF-8">
 {#	<meta http-equiv="refresh" content="200">#}
-	<script type="text/javascript" src={% static "js/goodsdetail.js"%}></script>
-	<link rel="stylesheet" href={% static "style/goodsdetail.css"%}>
+    <script type="text/javascript" src={% static "js/jquery.js" %}></script>
+	<script type="text/javascript" src={% static "js/goodsList.js"%}></script>
+    <link rel="stylesheet" href={% static "style/goodsList.css"%}>
 	<title>Document</title>
 </head>
 <body>
@@ -67,10 +68,10 @@
 					下一页
 				</div>
 				<div id="number">
-					第<input type="text"  value="1">页/
+					第<input type="text"  value="1"  id="ipt">页/
 					<input type="button" value="确定" id="yes">
 					<div id="all">
-						98
+						{{ all }}
 					</div>
 				</div>
 			</div>

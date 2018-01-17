@@ -27,16 +27,12 @@ urlpatterns = {
     url("^goods$",view.goods),
     url("^info$",view.info),
     url("^quite$",view.quite),
-    # url("e")
-    # url("gs",view.goods),
-    # url("gb", view.gb),
-    # url("tim",view.tim),
     url("^eval$",view.eval),
     url("^$",view.index),
     url("^newsList$",view.newsList),
-    url("^t$",view.t),
-    url("^goodsDetail$",view.goodsDetail),
+    url("^goodsList$",view.goodsList),
     url("^head$",view.head),
+
 
 
     # url("reg",view.reg),

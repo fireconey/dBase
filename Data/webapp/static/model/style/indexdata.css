@@ -25,7 +25,6 @@
 	padding-top:0.5%; 
 	font-size: 1.2em;
 	color:yellow;
-	font-size: bold;
 }
 .lab{
 	/*background:red;*/
@@ -81,7 +80,7 @@
 
 .data .li{
 	position: relative;
-	display: bolck;
+	display: block;
 	background: green;
 	height:17.39%; 
 	color:#FFF;
@@ -91,11 +90,9 @@
 .li img{
 	float:left;
 	/*display: block;*/
-	 
 	height:100%;
 	width:50px;
-	background: red;
-	
+	background:green;
 	border-radius:50%;  
 	
 }
@@ -107,7 +104,15 @@
 	top:50%;
 	left:8px;
 	color:blue;
+	width:13%;
+	background:none;
+	text-align: center;
+	overflow:hidden;
 
 }
-
+.li .text{
+	overflow:hidden;
+	/*background: red;*/
+	height: 100%;
+}
 

@@ -1069,11 +1069,14 @@ function chajian()
 	this.ajax=function(value)
 	{
 		var xl = 0
-      var type = value["type"]
-      var url = value["url"]
-      var data = new FormData(value["usr"])
-      var fn = value["fn"]
-      var wbzhi=0
+		var type = value["type"]
+		var url = value["url"]
+		var data=value["data"]
+		var form=new FormData()
+		for(i in data)
+			form.append(i,data[i])
+      	var fn = value["fn"]
+
       if (window.XMLHttpRequest) {
           xl = new XMLHttpRequest()
       }
@@ -1081,11 +1084,10 @@ function chajian()
           xl = new ActiveXObject("Microsoft.XMLHTTP")
       }
       xl.open(type, url, true)
-      xl.send(data)
+      xl.send(form)
       xl.onreadystatechange = function () {
           if (xl.readyState == 4 & xl.status == 200) {
               fn(xl)
-              
           }
       }
      
